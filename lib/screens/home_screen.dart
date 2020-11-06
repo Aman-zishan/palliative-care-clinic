@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var cardTextStyle = TextStyle(
         fontFamily: "Montserrat Regular",
         fontSize: 14,
+        fontWeight: FontWeight.w600,
         color: Color.fromRGBO(63, 63, 63, 1));
 
     return Scaffold(
@@ -68,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontSize: 20),
                             ),
                             Text(
-                              'region',
+                              'Edathanattukara',
                               style: TextStyle(
                                   fontSize: 14,
                                   color: Colors.white,
@@ -101,19 +103,28 @@ class _HomeScreenState extends State<HomeScreen> {
 
                               SvgPicture.network(
                                 'https://www.flaticon.com/svg/static/icons/svg/3555/3555625.svg',
-                                height: 90,
+                                height: 80,
                               ),
-                              SizedBox(height: 1,),
+                              SizedBox(height: 8),
                               Text(
                                 'About Palliative',
                                 style: cardTextStyle,
-                              )
+                              ),
+                              SizedBox(height: 2,),
+                              Text(
+                                  "About Us",
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 10
+                                  )
+                              ),
                             ],
                           ),
                         ),
                         ),
-
-                        Card(
+                  GestureDetector(
+                    onTap: (){print("TEST OK");},
+                      child:  Card(
                           shape:RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)
                           ),
@@ -122,18 +133,30 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               SvgPicture.network(
-                                'https://image.flaticon.com/icons/svg/1904/1904565.svg',
-                                height: 100,
+                                'https://www.flaticon.com/svg/static/icons/svg/3555/3555601.svg',
+                                height: 80,
                               ),
+                              SizedBox(height: 8,),
                               Text(
                                 'Donate',
                                 style: cardTextStyle,
-                              )
+                              ),
+                              SizedBox(height: 2,),
+                              Text(
+                                  "Create a better future",
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 10
+                                  )
+                              ),
                             ],
                           ),
                         ),
+                  ),
+GestureDetector(
+  onTap: (){print("TEST OK");},
 
-                        Card(
+                        child: Card(
                           shape:RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)
                           ),
@@ -142,42 +165,28 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               SvgPicture.network(
-                                'https://image.flaticon.com/icons/svg/1904/1904527.svg',
-                                height: 100,
+                                'https://www.flaticon.com/svg/static/icons/svg/3555/3555418.svg',
+                                height: 80,
                               ),
+                              SizedBox(height: 8,),
                               Text(
                                 'Office Contacts',
                                 style: cardTextStyle,
-                              )
-                            ],
-                          ),
-                        ),
-
-                        Card(
-                          shape:RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)
-                          ),
-                          elevation: 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              SvgPicture.network(
-                                'https://image.flaticon.com/icons/svg/1904/1904437.svg',
-                                height: 100,
                               ),
+                              SizedBox(height: 2,),
                               Text(
-                                'Volunteer  Registration',
-                                style: TextStyle(
-                                    fontFamily: "Montserrat Regular",
-                                    color: Color.fromRGBO(63, 63, 63, 1),
-                                  fontSize: 12
-                                ),
-                              )
+                                  "Contact details",
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 10
+                                  )
+                              ),
                             ],
                           ),
                         ),
-
-                        Card(
+),
+                    GestureDetector(onTap: (){print("TEST OK");},
+                        child:    Card(
                           shape:RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)
                           ),
@@ -186,18 +195,61 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               SvgPicture.network(
-                                'https://image.flaticon.com/icons/svg/1904/1904235.svg',
-                                height: 100,
+                                'https://www.flaticon.com/svg/static/icons/svg/3555/3555570.svg',
+                                height: 80,
                               ),
+                              SizedBox(height: 8,),
+                              Text(
+                                'Volunteering',
+                                style: cardTextStyle,
+
+                                ),
+                              SizedBox(height: 2,),
+                              Text(
+                                "Register as a volunteer",
+                                    style: TextStyle(
+                                  color: Colors.grey,
+                                      fontSize: 10
+                              )
+                              ),
+
+
+                            ],
+                          ),
+                        ),
+                        ),
+GestureDetector(onTap: ( ){},
+                            child:  Card(
+                          shape:RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8)
+                          ),
+                          elevation: 4,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              SvgPicture.network(
+                                'https://www.flaticon.com/svg/static/icons/svg/3555/3555500.svg',
+                                height: 80,
+                              ),
+                              SizedBox(height: 8,),
                               Text(
                                 'District Contacts',
                                 style: cardTextStyle,
-                              )
+                              ),
+                              SizedBox(height: 2,),
+                              Text(
+                                  "Contact details",
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 10
+                                  )
+                              ),
                             ],
                           ),
                         ),
-
-                        Card(
+),
+                    GestureDetector(onTap: (){},
+                        child: Card(
                           shape:RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)
                           ),
@@ -206,16 +258,26 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               SvgPicture.network(
-                                'https://image.flaticon.com/icons/svg/1904/1904221.svg',
-                                height: 100,
+                                'https://www.flaticon.com/svg/static/icons/svg/3555/3555226.svg',
+                                height: 80,
                               ),
+                              SizedBox(height: 8),
                               Text(
-                                'Course Plan',
+                                'Training Course',
                                 style: cardTextStyle,
-                              )
+                              ),
+                              SizedBox(height: 2,),
+                              Text(
+                                  "courses",
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 10
+                                  )
+                              ),
                             ],
                           ),
                         ),
+                    ), 
                       ],
                     ),
 
