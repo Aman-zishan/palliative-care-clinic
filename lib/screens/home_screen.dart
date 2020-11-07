@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'about.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -70,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontSize: 20),
                             ),
                             Text(
-                              'Edathanattukara',
+                              'Edathanattukara ',
                               style: TextStyle(
                                   fontSize: 14,
                                   color: Colors.white,
@@ -91,7 +92,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: <Widget>[
                         GestureDetector(
                           //TODO:navigate to palliative page
-                          onTap: (){print("TEST OK");},
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => AboutScreen())
+                            );},
                         child: Card(
                           shape:RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)
