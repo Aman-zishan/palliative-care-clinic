@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'about.dart';
+import 'office_contacts.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -42,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SafeArea(
             child: Padding(
-              padding: EdgeInsets.all(size.height * .05),
+              padding: EdgeInsets.only( top: size.height * .05, left: size.height * .05,right: size.height * .05,bottom: 10),
               child: Column(
                 children: <Widget>[
                   Container(
@@ -91,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisCount: 2,
                       children: <Widget>[
                         GestureDetector(
-                          //TODO:navigate to palliative page
+
                           onTap: (){
                             Navigator.push(
                               context,
@@ -128,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         ),
                   GestureDetector(
-                    onTap: (){print("TEST OK");},
+                    onTap: (){  },
                       child:  Card(
                           shape:RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)
@@ -159,7 +161,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                   ),
 GestureDetector(
-  onTap: (){print("TEST OK");},
+  onTap: (){Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => OfficeScreen())
+  );},
 
                         child: Card(
                           shape:RoundedRectangleBorder(
@@ -282,32 +287,44 @@ GestureDetector(onTap: ( ){},
                             ],
                           ),
                         ),
-                    ), 
-                      ],
                     ),
+
+                      ],
+
+                    ),
+
 
                   ),
-                  SizedBox(
-                    height: size.height * 0.05,
-                    child: Column(
-                      children: <Widget>[
-                        Text("© Developed by icodex",
-                          style: new TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.bold,
-                              foreground: Paint()..shader = linearGradient),
-                        ),
-                      ],
-                    ),
-                  )
+                  Padding(
+                    padding: const EdgeInsets.only(top: 0),
+                  child: GestureDetector(
+                    onTap: (){_launchURL();},
 
+                    child:
+                  Text("© Developed by icodex",
+                    style: new TextStyle(
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold,
+                        foreground: Paint()..shader = linearGradient),
+                  ),),),
                 ],
               ),
             ),
           ),
+
         ],
       ),
     );
   }
+  //external links to form, developer contact etc.
+  _launchURL() async {
+    const url = 'https://www.amanzishan.me';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
 }
 
