@@ -6,6 +6,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'about.dart';
 import 'office_contacts.dart';
+import 'donate.dart';
+import 'donatetest.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -130,7 +132,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         ),
                   GestureDetector(
-                    onTap: (){  },
+                    onTap: (){  Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => DonateScreen())
+                    ); },
                       child:  Card(
                           shape:RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)
