@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:upi_pay/upi_pay.dart';
 import 'dart:math';
+
 
 class DonateScreen extends StatefulWidget {
   @override
@@ -194,28 +192,28 @@ class _DonateScreenState extends State<DonateScreen> {
               children: <Widget>[
                 Expanded(
                   child: Text("Name : Palliative care clinic",
-                    style: TextStyle(color: Colors.grey,fontSize: 15),
+                    style: TextStyle(color: Colors.black,fontSize: 15),
 
 
                   ),
                 ),
                 Expanded(
                   child: Text("Account number : xxx xxx xxx ",
-                    style: TextStyle(color: Colors.grey,fontSize: 15),
+                    style: TextStyle(color: Colors.black,fontSize: 15),
 
 
                   ),
                 ),
                 Expanded(
                   child: Text("Branch : xx xxx xxx ",
-                    style: TextStyle(color: Colors.grey,fontSize: 15),
+                    style: TextStyle(color: Colors.black,fontSize: 15),
 
 
                   ),
                 ),
                 Expanded(
                   child: Text("IFSC code: xx xx xxx xx ",
-                    style: TextStyle(color: Colors.grey,fontSize: 15),
+                    style: TextStyle(color: Colors.black,fontSize: 15),
 
 
                   ),
@@ -271,14 +269,16 @@ class _DonateScreenState extends State<DonateScreen> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 50, bottom: 32),
+                  margin: EdgeInsets.only(top: 50
+                      , bottom: 32),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
+
                       Container(
                         margin: EdgeInsets.only(bottom: 12),
                         child: Text(
-                          'Choose a payment method',
+                          'Pay using',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -286,8 +286,9 @@ class _DonateScreenState extends State<DonateScreen> {
                         future: _appsFuture,
                         builder: (context, snapshot) {
                           if (snapshot.connectionState != ConnectionState.done) {
-                            return Container();
+                            return Center(child: CircularProgressIndicator());
                           }
+
 
                           return GridView.count(
 
@@ -303,11 +304,14 @@ class _DonateScreenState extends State<DonateScreen> {
                               color: Colors.transparent,
                               child: InkWell(
                                 onTap: () => _onTap(it),
+
+
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.center,
 
                                   children: <Widget>[
+
 
 
                                     Image.memory(
@@ -323,7 +327,7 @@ class _DonateScreenState extends State<DonateScreen> {
                                 .toList(),
                           );
                         },
-                      ),
+                      ),copyright,
                     ],
                   ),
                 )
