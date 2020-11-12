@@ -134,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   GestureDetector(
                     onTap: (){  Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => DonateScreen())
+                        MaterialPageRoute(builder: (context) => DonateTestScreen())
                     ); },
                       child:  Card(
                           shape:RoundedRectangleBorder(
