@@ -22,9 +22,10 @@ dependencies:
   flutter_svg: ^0.19.1
   font_awesome_flutter: ^8.10.0
   url_launcher: ^5.7.10
-  upi_pay: ^0.2.4
   upi_india: ^2.2.0+1
   status_alert: ^0.1.2
+  animated_splash: ^1.0.0
+
 
 
 
@@ -51,6 +52,7 @@ flutter:
 
   assets:
     - assets/images/top_header.png
+    - assets/images/test-splash.png
 
 
 

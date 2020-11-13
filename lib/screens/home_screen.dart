@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'about.dart';
 import 'office_contacts.dart';
 import 'donate.dart';
-import 'donatetest.dart';
+import 'registration.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -134,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   GestureDetector(
                     onTap: (){  Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => DonateTestScreen())
+                        MaterialPageRoute(builder: (context) => DonateScreen())
                     ); },
                       child:  Card(
                           shape:RoundedRectangleBorder(
@@ -200,7 +200,10 @@ GestureDetector(
                           ),
                         ),
 ),
-                    GestureDetector(onTap: (){print("TEST OK");},
+                    GestureDetector(onTap: (){Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => VolunteerScreen())
+                    );},
                         child:    Card(
                           shape:RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)
@@ -300,20 +303,27 @@ GestureDetector(onTap: ( ){},
 
 
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 0),
-                  child: GestureDetector(
-                    onTap: (){_launchURL();},
 
-                    child:
-                  Text("© Developed by icodex",
-                    style: new TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold,
-                        foreground: Paint()..shader = linearGradient),
-                  ),),),
+
                 ],
               ),
+            ),
+          ),
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 40),
+            child: Align(
+              alignment: FractionalOffset.bottomCenter,
+
+              child:  GestureDetector(
+                onTap: (){_launchURL();},
+                child: Text("© Developed by icodex",
+                  style: new TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                      foreground: Paint()..shader = linearGradient),
+                ),),
+            ),
             ),
           ),
 

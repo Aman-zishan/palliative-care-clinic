@@ -63,11 +63,7 @@ class _AboutScreenState extends State<AboutScreen> {
       );
     }
     // style
-    var cardTextStyle = TextStyle(
-        fontFamily: "Montserrat Regular",
-        fontSize: 14,
-        fontWeight: FontWeight.w600,
-        color: Color.fromRGBO(63, 63, 63, 1));
+
 
     return Scaffold(
       body: Stack(
@@ -75,7 +71,7 @@ class _AboutScreenState extends State<AboutScreen> {
           Container(
 
             width: size.width,
-            height: size.height * .3,
+            height: size.height * .275,
             decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.fill,

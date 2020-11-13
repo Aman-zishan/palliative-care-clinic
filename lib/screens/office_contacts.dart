@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -25,12 +25,15 @@ class _OfficeScreenState extends State<OfficeScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          GestureDetector(
+            onTap: (){_launchURL();},
+            child:
           Text("© Developed by icodex",
             style: new TextStyle(
                 fontSize: 15.0,
                 fontWeight: FontWeight.bold,
                 foreground: Paint()..shader = linearGradient),
-          ),
+          ),),
         ],),
     );
     //Button section
@@ -111,6 +114,7 @@ class _OfficeScreenState extends State<OfficeScreen> {
 
 
           ),
+
           Container(
             padding:  const EdgeInsets.only(top: 190,left: 20,right: 20),
 
@@ -500,30 +504,17 @@ class _OfficeScreenState extends State<OfficeScreen> {
 
 
   }
+  _launchURL() async {
+    const url = 'https://www.amanzishan.me';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   Color color = Colors.black;
 
-  Column _buildButtonColumn(Color color, IconData icon, String label) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, color: color),
 
-        Container(
-          margin: const EdgeInsets.only(top: 8),
-          child: Text(
-            label,
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: color,
-            ),
-          ),
-        ),
-      ],
-    );
-
-  }
 
 
 }

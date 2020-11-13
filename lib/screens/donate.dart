@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:upi_pay/upi_pay.dart';
-import 'dart:math';
+import 'package:flutter/widgets.dart';
+import 'package:upi_india/upi_india.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 
 class DonateScreen extends StatefulWidget {
@@ -14,95 +16,182 @@ final Shader linearGradient = LinearGradient(
 ).createShader(Rect.fromLTWH(75.0, 50.0, 200.0, 70.0));
 
 class _DonateScreenState extends State<DonateScreen> {
+  Future<UpiResponse> _transaction;
+  UpiIndia _upiIndia = UpiIndia();
+  List<UpiApp> apps;
 
-  String _upiAddrError;
+  TextStyle header = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.bold,
+  );
+
+  TextStyle value = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+  );
+
+
 
   final _upiAddressController = TextEditingController();
   final _amountController = TextEditingController();
-  Future<List<ApplicationMeta>> _appsFuture;
+
+
 
   void initState() {
-    super.initState();
-
-    _amountController.text =
-        "100";
     _upiAddressController.text = "amanzishan@oksbi";
-    _appsFuture = UpiPay.getInstalledUpiApplications();
+    _amountController.text =
+    "100";
+    _upiIndia.getAllUpiApps(mandatoryTransactionId: false).then((value) {
+      setState(() {
+        apps = value;
+      });
+    }).catchError((e) {
+      apps = [];
+    });
+    super.initState();
   }
+
+
+
+
   @override
   void dispose() {
     _amountController.dispose();
-    _upiAddressController.dispose();
+
     super.dispose();
   }
+  Future<UpiResponse> initiateTransaction(UpiApp app) async {
 
-  Future<void> _onTap(ApplicationMeta app) async {
-    final err = _validateUpiAddress(_upiAddressController.text);
-    if (err != null) {
-      setState(() {
-        _upiAddrError = err;
-      });
-      return;
-    }
-    setState(() {
-      _upiAddrError = null;
-    });
-
-    final transactionRef = Random.secure().nextInt(1 << 32).toString();
-    print("Starting transaction with id $transactionRef");
-
-    final a = await UpiPay.initiateTransaction(
-      amount: _amountController.text,
-      app: app.upiApplication,
+    return _upiIndia.startTransaction(
+      app: app,
+      receiverUpiId: "amanzishan@oksbi",
       receiverName: 'Aman',
-      receiverUpiAddress: _upiAddressController.text,
-      transactionRef: transactionRef,
-      merchantCode: '7372',
+      transactionRefId: 'TestingUpiIndiaPlugin',
+      transactionNote: 'Donation to palliative care clinic',
+      amount: double.parse(_amountController.text),
     );
-
-    print(a);
   }
+
+  Widget displayUpiApps() {
+    if (apps == null)
+      return Center(child: CircularProgressIndicator());
+    else if (apps.length == 0)
+      return Center(
+        child: Text(
+          "No UPI apps found to handle transaction. \nPlease use account details for donation",
+          style: header,
+        ),
+      );
+    else
+      return Align(
+        alignment: Alignment.topCenter,
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Wrap(
+            children: apps.map<Widget>((UpiApp app) {
+              return GestureDetector(
+                onTap: () {
+                  _transaction = initiateTransaction(app);
+                  setState(() {});
+                },
+                child: Container(
+                  height: 100,
+                  width: 100,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.memory(
+                        app.icon,
+                        height: 60,
+                        width: 60,
+                      ),
+
+                    ],
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+        ),
+      );
+  }
+
+  String _upiErrorHandler(error) {
+    switch (error) {
+      case UpiIndiaAppNotInstalledException:
+        return 'Requested app not installed on device';
+      case UpiIndiaUserCancelledException:
+        return 'You cancelled the transaction';
+      case UpiIndiaNullResponseException:
+        return 'Requested app didn\'t return any response';
+      case UpiIndiaInvalidParametersException:
+        return 'Requested app cannot handle the transaction';
+      default:
+        return 'An Unknown error has occurred';
+    }
+  }
+
+  void _checkTxnStatus(String status) {
+    switch (status) {
+      case UpiPaymentStatus.SUCCESS:
+        return print('success');
+
+        break;
+      case UpiPaymentStatus.SUBMITTED:
+        print('Transaction Submitted');
+        break;
+      case UpiPaymentStatus.FAILURE:
+        return print('failed');
+        break;
+      default:
+        print('Received an Unknown transaction status');
+    }
+  }
+
+  Widget displayTransactionData( body) {
+    Color check = Colors.green;
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+
+
+          Text("Payment Status: ", style: header),
+          Flexible(
+
+              child: Icon(
+                      () {
+                   
+                if(body == "FAILURE"){
+                  check = Colors.red;
+                  return Icons.cancel ;}
+
+                else{
+                  return Icons.check_circle;}
+                // your code here
+              }(),
+                color: check,
+
+              ))
+
+        ],
+      ),
+    );
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     // to get size
     var size = MediaQuery.of(context).size;
-//Copyright widget
 
-    Widget copyright = Container(
-      padding: const EdgeInsets.only(top: 15,bottom: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("© Developed by icodex",
-            style: new TextStyle(
-                fontSize: 15.0,
-                fontWeight: FontWeight.bold,
-                foreground: Paint()..shader = linearGradient),
-          ),
-        ],),
-    );
     //Button section
 
-//Account detaiils Pop up card
-    Future _accountDetails(BuildContext context) {
-      return showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text('Not in stock'),
-            content: const Text('This item is no longer available'),
-            actions: [
-              FlatButton(
-                child: Text('Ok'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            ],
-          );
-        },
-      );
-    }
+
+
 
 
 
@@ -183,187 +272,126 @@ class _DonateScreenState extends State<DonateScreen> {
 
           ),
           Container(
-            padding:  const EdgeInsets.only(top: 270,left: 20,right: 20),
 
-            child: ListView(
-              
-              //contact list
+            padding:  const EdgeInsets.only(top: 280,left: 20,right: 20),child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
 
-              children: <Widget>[
-                Expanded(
-                  child: Text("Name : Palliative care clinic",
-                    style: TextStyle(color: Colors.black,fontSize: 15),
-
-
-                  ),
-                ),
-                Expanded(
-                  child: Text("Account number : xxx xxx xxx ",
-                    style: TextStyle(color: Colors.black,fontSize: 15),
+            children: <Widget>[
+              Expanded(
+              child: Text("Name : Palliative care clinic \nAccount number : xxx xxx xxx \nBranch : xx xxx xxx \nIFSC code: xx xx xxx xx  ",
+                style: TextStyle(color: Colors.black,fontSize: 15),
 
 
-                  ),
-                ),
-                Expanded(
-                  child: Text("Branch : xx xxx xxx ",
-                    style: TextStyle(color: Colors.black,fontSize: 15),
+              ),
+            ),
+],
+    ),),
 
+      Container( padding: EdgeInsets.only(top: 400,left: 20,right: 20), child:Column(
+               children:[  TextFormField(
+                    style: TextStyle(color: Colors.grey),
+                    controller: _upiAddressController,
+                    enabled: false,
+                    decoration: InputDecoration(
+                      fillColor: Colors.grey,
+                      border: OutlineInputBorder(),
+                      hintText: 'address@upi',
+                      labelText: 'UPI Address',
 
-                  ),
-                ),
-                Expanded(
-                  child: Text("IFSC code: xx xx xxx xx ",
-                    style: TextStyle(color: Colors.black,fontSize: 15),
+                    ),
+                  ), SizedBox(height: 15,),
+      TextField(
+                    controller: _amountController,
 
-
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 32),
-                  child: Row(
-                    children: <Widget>[
-
-                      Expanded(
-                        child: TextFormField(
-                          style: TextStyle(color: Colors.grey),
-                          controller: _upiAddressController,
-                          enabled: false,
-                          decoration: InputDecoration(
-                            fillColor: Colors.grey,
-                            border: OutlineInputBorder(),
-                            hintText: 'address@upi',
-                            labelText: 'UPI Address',
-
-                          ),
-                        ),
-                      ),
-
-                    ],
-                  ),
-                ),
-                if (_upiAddrError != null)
-                  Container(
-                    margin: EdgeInsets.only(top: 4, left: 12),
-                    child: Text(
-                      _upiAddrError,
-                      style: TextStyle(color: Colors.red),
+                    enabled: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Amount',
                     ),
                   ),
+                ],),),
+
+          Container(
+            padding:  const EdgeInsets.only(top: 560,left: 20,right: 20),
+
+            child: Column(
+              children: <Widget>[Expanded(child: displayUpiApps(),
+              ),
+                Expanded(
+                    child: FutureBuilder(
+                      future: _transaction,
+                      builder: (BuildContext context, AsyncSnapshot<UpiResponse> snapshot){
+                        if (snapshot.connectionState == ConnectionState.done){
+                          if (snapshot.hasError) {
+                            return Center(
+                              child: Text(
+                                _upiErrorHandler(snapshot.error.runtimeType),
+                                style: header,
+                              ), // Print's text message on screen
+                            );
+                          }
+                          UpiResponse _upiResponse = snapshot.data;
+
+
+                          String status = _upiResponse.status ?? 'N/A';
+
+                          _checkTxnStatus(status);
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+
+                                displayTransactionData( status.toUpperCase()),
+
+                              ],
+                            ),
+                          );
+
+
+                        } else
+                          return Center();
+
+
+
+                      },
+
+                    )),
                 Container(
-                  margin: EdgeInsets.only(top: 32),
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: TextField(
-                          controller: _amountController,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 40),
+                    child: Align(
+                      alignment: FractionalOffset.bottomCenter,
 
-                          enabled: true,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Amount',
-                          ),
-                        ),
-                      ),
-
-                    ],
+                      child:  GestureDetector(
+                        onTap: (){_launchURL();},
+                        child: Text("© Developed by icodex",
+                          style: new TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              foreground: Paint()..shader = linearGradient),
+                        ),),
+                    ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 50
-                      , bottom: 32),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-
-                      Container(
-                        margin: EdgeInsets.only(bottom: 12),
-                        child: Text(
-                          'Pay using',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      FutureBuilder<List<ApplicationMeta>>(
-                        future: _appsFuture,
-                        builder: (context, snapshot) {
-                          if (snapshot.connectionState != ConnectionState.done) {
-                            return Center(child: CircularProgressIndicator());
-                          }
-
-
-                          return GridView.count(
-
-                            crossAxisCount: 2,
-                            shrinkWrap: true,
-                            mainAxisSpacing: 8,
-                            crossAxisSpacing: 8,
-                            childAspectRatio: 1.6,
-                            physics: NeverScrollableScrollPhysics(),
-                            children: snapshot.data
-                                .map((it) => Material(
-                              key: ObjectKey(it.upiApplication),
-                              color: Colors.transparent,
-                              child: InkWell(
-                                onTap: () => _onTap(it),
-
-
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-
-                                  children: <Widget>[
-
-
-
-                                    Image.memory(
-                                      it.icon,
-                                      width: 64,
-                                      height: 64,
-                                    ),
-
-                                  ],
-                                ),
-                              ),
-                            ))
-                                .toList(),
-                          );
-                        },
-                      ),copyright,
-                    ],
-                  ),
-                )
               ],
-
             ),
-            
-          ),
-
-        ],
-
-
-      ),
+      ),],),
 
     );
-
-
-
-
   }
-
-
-
-
+  _launchURL() async {
+    const url = 'https://www.amanzishan.me';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
 }
-String _validateUpiAddress(String value) {
-  if (value.isEmpty) {
-    return 'UPI Address is required.';
-  }
 
-  if (!UpiPay.checkIfUpiAddressIsValid(value)) {
-    return 'UPI Address is invalid.';
-  }
 
-  return null;
-}
 
 
