@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:upi_pay/upi_pay.dart';
+import 'package:flutter/widgets.dart';
 import 'package:upi_india/upi_india.dart';
 import 'package:status_alert/status_alert.dart';
 
@@ -33,7 +33,7 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
 
   final _upiAddressController = TextEditingController();
   final _amountController = TextEditingController();
-  Future<List<ApplicationMeta>> _appsFuture;
+
 
 
   void initState() {
@@ -282,39 +282,24 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
 
           ),
           Container(
-            padding:  const EdgeInsets.only(top: 270,left: 20,right: 20),child: ListView(
-            children: [ Expanded(
-              child: Text("Name : Palliative care clinic",
+
+            padding:  const EdgeInsets.only(top: 280,left: 20,right: 20),child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+
+            children: <Widget>[
+              Expanded(
+              child: Text("Name : Palliative care clinic \nAccount number : xxx xxx xxx \nBranch : xx xxx xxx \nIFSC code: xx xx xxx xx  ",
                 style: TextStyle(color: Colors.black,fontSize: 15),
 
 
               ),
             ),
-              Expanded(
-                child: Text("Account number : xxx xxx xxx ",
-                  style: TextStyle(color: Colors.black,fontSize: 15),
+],
+    ),),
 
-
-                ),
-              ),
-              Expanded(
-                child: Text("Branch : xx xxx xxx ",
-                  style: TextStyle(color: Colors.black,fontSize: 15),
-
-
-                ),
-              ),
-              Expanded(
-                child: Text("IFSC code: xx xx xxx xx ",
-                  style: TextStyle(color: Colors.black,fontSize: 15),
-
-
-                ),
-              ),
-              SizedBox(height: 20,),
-
-                Expanded(
-                  child: TextFormField(
+      Container( padding: EdgeInsets.only(top: 400,left: 20,right: 20), child:Column(
+               children:[  TextFormField(
                     style: TextStyle(color: Colors.grey),
                     controller: _upiAddressController,
                     enabled: false,
@@ -325,10 +310,8 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                       labelText: 'UPI Address',
 
                     ),
-                  ),
-                ), SizedBox(height: 10,),
-                Expanded(
-                  child: TextField(
+                  ), SizedBox(height: 15,),
+      TextField(
                     controller: _amountController,
 
                     enabled: true,
@@ -337,16 +320,10 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                       labelText: 'Amount',
                     ),
                   ),
-                ),
-
-            ],
-          ),),
-
-
-
+                ],),),
 
           Container(
-            padding:  const EdgeInsets.only(top: 550,left: 20,right: 20),
+            padding:  const EdgeInsets.only(top: 560,left: 20,right: 20),
 
             child: Column(
               children: <Widget>[Expanded(child: displayUpiApps(),
