@@ -161,21 +161,16 @@ class _DonateScreenState extends State<DonateScreen> {
           Text("Payment Status: ", style: header),
           Flexible(
 
-              child: Icon(
-                      () {
-                   
+              child: Icon(() {
                 if(body == "FAILURE"){
                   check = Colors.red;
                   return Icons.cancel ;}
-
                 else{
                   return Icons.check_circle;}
-                // your code here
+
               }(),
                 color: check,
-
               ))
-
         ],
       ),
     );

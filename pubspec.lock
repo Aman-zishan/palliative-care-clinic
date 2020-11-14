@@ -71,20 +71,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0-nullsafety.1"
-  flare_dart:
-    dependency: transitive
-    description:
-      name: flare_dart
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.3.4"
-  flare_flutter:
-    dependency: transitive
-    description:
-      name: flare_flutter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.8.3"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -182,13 +168,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0-nullsafety.1"
-  status_alert:
-    dependency: "direct main"
-    description:
-      name: status_alert
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.2"
   stream_channel:
     dependency: transitive
     description:

@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'about.dart';
 import 'office_contacts.dart';
-import 'donate.dart';
+import 'donatetest.dart';
 import 'registration.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -134,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   GestureDetector(
                     onTap: (){  Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => DonateScreen())
+                        MaterialPageRoute(builder: (context) => DonateTestScreen())
                     ); },
                       child:  Card(
                           shape:RoundedRectangleBorder(
