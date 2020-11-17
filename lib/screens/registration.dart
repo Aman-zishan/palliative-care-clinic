@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 
 class VolunteerScreen extends StatefulWidget {
@@ -45,10 +46,10 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        CircleAvatar(
-                          radius: 32,
-                          backgroundImage: NetworkImage(
-                              'https://www.adultpalliativehub.com/sites/all/themes/palliativehub/images/panel-icon-3.png'),
+                        SvgPicture.network(
+                          'https://www.flaticon.com/svg/static/icons/svg/3555/3555570.svg',
+                          placeholderBuilder: (context) => CircularProgressIndicator(),
+                          width: 60.0,
                         ),
                         SizedBox(
                           width: 16,

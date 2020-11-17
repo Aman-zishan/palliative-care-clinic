@@ -4,6 +4,10 @@ import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:palliative_care/models_provider/theme_provider.dart';
+import 'package:provider/provider.dart';
+
+
 
 class OfficeScreen extends StatefulWidget {
   @override
@@ -16,6 +20,7 @@ final Shader linearGradient = LinearGradient(
 class _OfficeScreenState extends State<OfficeScreen> {
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     // to get size
     var size = MediaQuery.of(context).size;
 //Copyright widget
@@ -46,7 +51,8 @@ class _OfficeScreenState extends State<OfficeScreen> {
         fontFamily: "Montserrat Regular",
         fontSize: 18,
         fontWeight: FontWeight.w600,
-        color: Color.fromRGBO(63, 63, 63, 1));
+      color: themeProvider.themeMode().textColor,
+    );
 
     return Scaffold(
       body: Stack(
@@ -73,12 +79,18 @@ class _OfficeScreenState extends State<OfficeScreen> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        CircleAvatar(
-                          radius: 32,
-                          backgroundImage: NetworkImage(
 
-                              'https://www.adultpalliativehub.com/sites/all/themes/palliativehub/images/panel-icon-3.png'),
-                        ),
+                          SvgPicture.network(
+
+                            'https://www.flaticon.com/svg/static/icons/svg/3555/3555418.svg',
+                            placeholderBuilder: (context) => CircularProgressIndicator(),
+                            fit: BoxFit.cover,
+
+
+                            width: 60.0,
+                          ),
+
+
                         SizedBox(
                           width: 16,
                         ),

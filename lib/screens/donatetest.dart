@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class DonateTestScreen extends StatefulWidget {
   @override
@@ -24,11 +25,7 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
 
 
     // style
-    var cardTextStyle = TextStyle(
-        fontFamily: "Montserrat Regular",
-        fontSize: 18,
-        fontWeight: FontWeight.w600,
-        color: Color.fromRGBO(63, 63, 63, 1));
+
 
     return Scaffold(
       body: Stack(
@@ -55,12 +52,17 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        CircleAvatar(
-                          radius: 32,
-                          backgroundImage: NetworkImage(
+                         SvgPicture.network(
 
-                              'https://www.adultpalliativehub.com/sites/all/themes/palliativehub/images/panel-icon-3.png'),
-                        ),
+                            'https://www.flaticon.com/svg/static/icons/svg/3555/3555601.svg',
+                            placeholderBuilder: (context) => CircularProgressIndicator(),
+                            fit: BoxFit.cover,
+
+
+                            width: 60.0,
+                          ),
+
+
                         SizedBox(
                           width: 16,
                         ),
@@ -75,26 +77,13 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                                   color: Colors.white,
                                   fontSize: 20),
                             ),
-
-
-
                           ],
                         ),
-
-
                       ],
-
                     ),
-
-
                   ),
-
-
-
                 ],
               ),),
-
-
           ),
    Padding(padding: const EdgeInsets.only(top: 230),
 
@@ -121,6 +110,7 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                     height: 70,
 
                     child: Card(
+                      color: Colors.white,
 
 
                       shape:RoundedRectangleBorder(
@@ -143,6 +133,7 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
 
                     height: 70,
                     child: Card(
+                      color: Colors.white,
 
 
                       shape:RoundedRectangleBorder(
@@ -165,6 +156,7 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
 
                     height: 75,
                     child: Card(
+                      color: Colors.white,
 
 
                       shape:RoundedRectangleBorder(

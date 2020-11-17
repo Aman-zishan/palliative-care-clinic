@@ -1,4 +1,4 @@
-name: flutterdashboarduiapp
+name: palliative_care
 description: A new Flutter application.
 
 # The following defines the version and build number for your application.
@@ -24,6 +24,10 @@ dependencies:
   url_launcher: ^5.7.10
   upi_india: ^2.2.0+1
   animated_splash: ^1.0.0
+  provider: ^4.3.2+2
+  hive: ^1.4.4+1
+  path_provider: ^1.6.24
+
 
 
 
@@ -55,6 +59,7 @@ flutter:
     - assets/images/gpay.png
     - assets/images/paytm.png
     - assets/images/phonepe.png
+    - assets/images/loading.gif
 
 
 
