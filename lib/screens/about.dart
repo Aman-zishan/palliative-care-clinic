@@ -14,6 +14,8 @@ final Shader linearGradient = LinearGradient(
 ).createShader(Rect.fromLTWH(75.0, 50.0, 200.0, 70.0));
 
 class _AboutScreenState extends State<AboutScreen> {
+  List<String> languages = ['English', 'മലയാളം'];
+  String _selectedLanguage = 'English' ;
   @override
   Widget build(BuildContext context) {
     // to get size
@@ -105,9 +107,9 @@ class _AboutScreenState extends State<AboutScreen> {
                         SizedBox(
                           width: 16,
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
                               'About Us',
@@ -116,9 +118,26 @@ class _AboutScreenState extends State<AboutScreen> {
                                   color: Colors.white,
                                   fontSize: 20),
                             ),
+                            Padding(padding: EdgeInsets.only(left: 40,right: 0)),
+                            SizedBox(height: 15,),
+                            DropdownButton(
+                              hint: Text(_selectedLanguage),
+                              icon: Icon(Icons.language,color: Colors.black),
 
-
-                            
+                              value: _selectedLanguage,
+                              onChanged: (newValue) {
+                                setState(() {
+                                  _selectedLanguage = newValue;
+                                  print(_selectedLanguage);
+                                });
+                              },
+                              items: languages.map((location) {
+                                return DropdownMenuItem(
+                                  child: new Text(location),
+                                  value: location,
+                                );
+                              }).toList(),
+                            ),
                           ],
                         ),
 
@@ -156,11 +175,12 @@ Container(
 child: ListView(
   children: [
     Text("Heading 1\n", style: TextStyle(fontWeight: FontWeight.bold),),
-    
+(_selectedLanguage == 'English')?
     textBuild("Lorem Ipsum is simply dummy text of the printing"
         " and typesetting industry. Lorem Ipsum has been the industry's "
         "standard dummy text ever since the 1500s, when an unknown printer"
-        " took a galley of type and scrambled it to make a type specimen book.",),
+        " took a galley of type and scrambled it to make a type specimen book.",):
+textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എടത്തനാട്ടുകരയിൽ 2008 മുതൽ പ്രവർത്തിച്ചു വരുന്ന സ്ഥാപനമാണ് പാലിയേറ്റീവ് കെയർ ക്ലിനിക്ക്. ഒരു സാമൂഹ്യ ഉടമസ്ഥതയിലുള്ള ഒരു സ്ഥാപനമെന്ന നിലയിൽ അതിന്റെ സേവനങ്ങൾ അലനല്ലൂർ പഞ്ചായത്ത് മുഴുവനായും തച്ചനാട്ടുകര, കോട്ടോ പ്പാടം പഞ്ചായത്തുകളിൽ ഭാഗികമായും ലഭിച്ചുകൊണ്ടിരിക്കുന്നു. കിടപ്പിലായ രോഗികളെ അവരുടെ മാനസികവും ശാരീരികവും സാമ്പത്തികവും സാമൂഹികവും ആത്മീയവുമായ സംഘർഷങ്ങളിൽ നിന്ന് കൈ പിടിച്ചുയർത്തി അന്തസ്സുറ്റ പരിചരണം ലഭ്യമാക്കുകയാണ് ഈ സംരംഭം ഉദ്ദേശിക്കുന്നത്. നാമുൾപ്പെടുന്ന സമൂഹത്തിലെ നമ്മുടെ സഹോദരീസഹോദരന്മാർ തന്നെയായ ഈ സംരംഭത്തിന്റെ ഉഭഭോക്താക്കളെ പരിചരിക്കുന്നത് ഒരു സാമൂഹിക ഉത്തരവാദിത്വമായാണ് കാണേണ്ടത്. രോഗികൾ അവഗണിക്കപ്പെടുകയും കൂണുകൾ പോലെ വൃദ്ധസദനങ്ങൾ മുളച്ചുപൊന്തുകയും ചെയ്യുകയും കാരുണ്യവും നന്മയും ക്യാമറാഫ്ലാഷുകളെ മാത്രം നിറം പിടിപ്പിക്കുകയും ചെയ്യുമ്പോൾ പാലിയേറ്റീവ് കെയറിന്റെ പ്രവർത്തനങ്ങൾ ആത്മാർത്ഥവും സുതാര്യവുമായി നടന്നുകൊണ്ടിരിക്കുന്നത് പാലിയേറ്റീവ് കെയർ ഒരു സേവകന്റെയും ഔദാര്യമല്ലെന്നും അത് കിടപ്പിലാവുന്ന ഓരോ രോഗിയുടെയും അവകാശമാണെന്നുമുള്ള ഉറച്ച വിശ്വാസത്തിന്മേലാണ്",),
     Text("Heading 1\n", style: TextStyle(fontWeight: FontWeight.bold),),
     textBuild("Lorem Ipsum is simply dummy text of the printing"
         " and typesetting industry. Lorem Ipsum has been the industry's "
