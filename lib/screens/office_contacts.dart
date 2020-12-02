@@ -105,28 +105,15 @@ class _OfficeScreenState extends State<OfficeScreen> {
                                   color: Colors.white,
                                   fontSize: 20),
                             ),
-
-
-
                           ],
                         ),
-
-
                       ],
-
                     ),
-
-
                   ),
-
-
-
                 ],
-              ),),
-
-
+              ),
+            ),
           ),
-
           Container(
             padding:  const EdgeInsets.only(top: 190,left: 20,right: 20),
 
@@ -135,99 +122,7 @@ class _OfficeScreenState extends State<OfficeScreen> {
               children: [
 
                 GestureDetector(
-                  onTap: (){  },
-                  child:  Container(
-
-                    height: 75,
-                    child: Card(
-
-
-                      shape:RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)
-                      ),
-                      elevation: 4,
-                      child: Row(
-
-
-
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(padding: const EdgeInsets.only(left: 10),
-                            child:  SvgPicture.network(
-                              'https://www.flaticon.com/svg/static/icons/svg/561/561253.svg',
-                              height: 30,
-                            ),),
-                          SizedBox(height: 8,),
-                          Padding(padding: const EdgeInsets.only(left: 5),
-
-                            child: Container(
-                              padding: const EdgeInsets.only(left: 10),
-
-                              child:Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Office Contact',
-                                    style: cardTextStyle,
-                                  ),
-                                  Text("Ph:  XXX XXX XXX", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
-                              ),),),
-
-
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: (){  },
-                  child:  Container(
-
-                    height: 75,
-                    child: Card(
-
-
-                      shape:RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)
-                      ),
-                      elevation: 4,
-                      child: Row(
-
-
-
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(padding: const EdgeInsets.only(left: 10),
-                            child:  SvgPicture.network(
-                              'https://www.flaticon.com/svg/static/icons/svg/561/561253.svg',
-                              height: 30,
-                            ),),
-                          SizedBox(height: 8,),
-                          Padding(padding: const EdgeInsets.only(left: 5),
-
-                            child: Container(
-                              padding: const EdgeInsets.only(left: 10),
-
-                              child:Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Office Secretary',
-                                    style: cardTextStyle,
-                                  ),
-                                  Text("Ph:  XXX XXX XXX", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
-                              ),),),
-
-
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: (){  },
+                  onTap: (){ launch("tel://949781083"); },
                   child:  Container(
 
                     height: 75,
@@ -263,7 +158,7 @@ class _OfficeScreenState extends State<OfficeScreen> {
                                     'Chairman',
                                     style: cardTextStyle,
                                   ),
-                                  Text("Ph:  XXX XXX XXX", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                                  Text("Ph:  +91 949781083", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
                               ),),),
 
 
@@ -306,10 +201,10 @@ class _OfficeScreenState extends State<OfficeScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'General Secretary',
+                                    'Vice Chairman 1',
                                     style: cardTextStyle,
                                   ),
-                                  Text("Ph:  XXX XXX XXX", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                                  Text("Ph:  +91 9496516858", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
                               ),),),
 
 
@@ -352,10 +247,10 @@ class _OfficeScreenState extends State<OfficeScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Home Care team 1',
+                                    'Vice Chairman 2',
                                     style: cardTextStyle,
                                   ),
-                                  Text("Ph:  XXX XXX XXX", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                                  Text("Ph:  +91 9447622690", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
                               ),),),
 
 
@@ -398,7 +293,97 @@ class _OfficeScreenState extends State<OfficeScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Home Care team 2',
+                                    'Vice Chairman 3',
+                                    style: cardTextStyle,
+                                  ),
+                                  Text("Ph:  +91 9946991358", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                              ),),),
+
+
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: (){  },
+                  child:  Container(
+
+                    height: 75,
+                    child: Card(
+
+
+                      shape:RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)
+                      ),
+                      elevation: 4,
+                      child: Row(
+
+
+
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(padding: const EdgeInsets.only(left: 10),
+                            child:  SvgPicture.network(
+                              'https://www.flaticon.com/svg/static/icons/svg/561/561253.svg',
+                              height: 30,
+                            ),),
+                          SizedBox(height: 8,),
+                          Padding(padding: const EdgeInsets.only(left: 5),
+
+                            child: Container(
+                              padding: const EdgeInsets.only(left: 10),
+
+                              child:Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Secretary',
+                                    style: cardTextStyle,
+                                  ),
+                                  Text("Ph:  +91 9447841266", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                              ),),),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: (){  },
+                  child:  Container(
+
+                    height: 75,
+                    child: Card(
+
+
+                      shape:RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)
+                      ),
+                      elevation: 4,
+                      child: Row(
+
+
+
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(padding: const EdgeInsets.only(left: 10),
+                            child:  SvgPicture.network(
+                              'https://www.flaticon.com/svg/static/icons/svg/561/561253.svg',
+                              height: 30,
+                            ),),
+                          SizedBox(height: 8,),
+                          Padding(padding: const EdgeInsets.only(left: 5),
+
+                            child: Container(
+                              padding: const EdgeInsets.only(left: 10),
+
+                              child:Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Joint Secretary 1',
                                     style: cardTextStyle,
                                   ),
                                   Text("Ph:  XXX XXX XXX", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
