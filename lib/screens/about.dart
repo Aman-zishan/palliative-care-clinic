@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'donatetest.dart';
+import 'package:palliative_care/components/urls.dart';
 
 
 class AboutScreen extends StatefulWidget {
@@ -43,12 +45,21 @@ class _AboutScreenState extends State<AboutScreen> {
           //TODO: connect links via URL_LAUNCHER
           GestureDetector(
             onTap: (){
-              print("working");
+              urlfunc.launchURL("mailto:palliativeedk@gmail.com");
             },
 
           child: _buildButtonColumn(color, Icons.mail, ""),),
-          _buildButtonColumn(color, Icons.location_on_outlined, ''),
-          _buildButtonColumn(color, FontAwesomeIcons.facebook, ''),
+
+          GestureDetector(
+            onTap: (){
+              urlfunc.launchURL("https://goo.gl/maps/BQgV1MUBK24iZKfB7");
+            },
+              child: _buildButtonColumn(color, Icons.location_on_outlined,'')),
+          GestureDetector(
+              onTap: (){
+                urlfunc.launchURL("https://www.facebook.com/groups/550155425193809/?ref=share");
+              },
+              child: _buildButtonColumn(color, FontAwesomeIcons.facebook, '')),
         ],
       ),
     );
@@ -60,7 +71,6 @@ class _AboutScreenState extends State<AboutScreen> {
       return Container(
 
         padding: const EdgeInsets.only(top: 0,bottom: 30),
-
         child: Text(
           text,
           style: TextStyle(fontSize: 15),
@@ -184,12 +194,12 @@ child: ListView(
   children: [
 
 (_selectedLanguage == 'English')?
-    textBuild("Edathanattukara Palliative Care is a community owned company providing its services in Alanallur,"
-      "Kottopadam, Thachanattukara and Thazhekode panchayats since 2008. The project aims to provide inpatient"
+    textBuild("Edathanattukara Palliative Care is a community owned company providing its services in Alanallur, "
+      "Kottopadam, Thachanattukara and Thazhekode panchayats since 2008. The project aims to provide in patient"
         " care at home by lifting the bedridden patients out of their mental, physical, financial and social"
-     " conflicts. Caring for the beneficiaries of this project, which are our brothers and sisters in the"
-      "community which we belong, should be seen as a social responsibility. When patients are neglected and"
-      "old age homes sprout like mushrooms, and pity and goodness only color the camera flashes, the work of"
+     " conflicts. Caring for the beneficiaries of this project, which are our brothers and sisters in the "
+      "community which we belong, should be seen as a social responsibility. When patients are neglected and "
+      "old age homes sprout like mushrooms, and pity and goodness only color the camera flashes, the work of "
       "palliative care is done sincerely and transparently in the firm belief that palliative care is not the"
       " generosity of any servant and that it is the right of every bedridden patient."):
 textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എടത്തനാട്ടുകരയിൽ 2008 മുതൽ പ്രവർത്തിച്ചു"
@@ -218,7 +228,7 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
 
     (_selectedLanguage == 'English')?
     textBuild("To ensure palliative care for bedridden patients at home, two-vehicle doctor-led doctor home care is"
-        " conducted four times a month, nurse-led nursing home care thirty-two times a month, and volunteer"
+        " conducted four times a month, nurse-led nursing home care thirty-two times a month, and volunteer "
         "home care, which consists of only volunteers about thirty times"
         " took a galley of type and scrambled it to make a type specimen book.",):
     textBuild("കിടപ്പിലായ രോഗികളെ വീടുകളിൽ ചെന്ന് സാന്ത്വന പരിചരണം "
@@ -228,16 +238,123 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
         " തവണ വളണ്ടിയർമാർ മാത്രം ഉൾക്കൊള്ളുന്ന വളണ്ടിയർ ഹോം കെയറും നടത്തിവരുന്നു."),
     (_selectedLanguage == 'English')?
     Text("- Day Care\n", style: TextStyle(fontWeight: FontWeight.bold),):
-    Text("- യ കെയർ\n", style: TextStyle(fontWeight: FontWeight.bold),),
+    Text("- ഡേ കെയർ\n", style: TextStyle(fontWeight: FontWeight.bold),),
     (_selectedLanguage == 'English')?
     textBuild("Four times a month, the clinic's day care system allows patients trapped in a room, including those with"
-        "spinal cord injuries, to communicate with the outside world and thereby reduce their stress. Organizes"
+        "spinal cord injuries, to communicate with the outside world and thereby reduce their stress. Organizes "
         "job training and other events for the customers of the day care system.",):
-    textBuild("നകട്ടലലിന്ക്ഷതയമറ്റവർ ഉൾകപ്പകട ഒരു മുെിയിൽ തളക്കകപ്പട്ട യരാഗികകള "
-        "മാസത്തിൽ നാല് തവണ ക്ലിനിക്കിൽ യ കകയർ സംവിധാനത്തിലൂകട പുെം"
-        " നേതൃത്വത്തിലുള്ള ഡോക്ടർസ് ഹോം കെയറും മാസത്തിൽ മുപ്പത്തിരണ്ട് തവണ"
-        "നഴ്സിന്റെ നേതൃത്വത്തിലുള്ള നഴ്സ് ഹോം കെയറും കൂടാതെ ഏകദേശം മുപ്പത്"
-        " തവണ വളണ്ടിയർമാർ മാത്രം ഉൾക്കൊള്ളുന്ന വളണ്ടിയർ ഹോം കെയറും നടത്തിവരുന്നു."),
+    textBuild("നട്ടെല്ലിന് ക്ഷതമേറ്റവർ ഉൾപ്പെടെ ഒരു മുറിയിൽ തളക്കകപ്പട്ട രോഗികളെ "
+        "മാസത്തിൽ നാല് തവണ ക്ലിനിക്കിൽ ഡേ കെയർ സംവിധാനത്തിലൂടെ പുറം"
+        " ലോകവുമായി ബന്ധപ്പെടാനും അതുവഴി അവരുകട മാനസിക സംഘർഷം"
+        "കുറക്കാനും സഹായിക്കുന്നു. ഡേ കെയർ സംവിധാനത്തിലെ ഉഭയഭോക്താക്കൾക്ക്"
+        " തൊഴിൽ പരിശീലനവും മറ്റു പരിപാടികളും സംഘടിപ്പിക്കുന്നു."),
+    (_selectedLanguage == 'English')?
+    Text("- Physiotherapy OP\n", style: TextStyle(fontWeight: FontWeight.bold),):
+    Text("- ഫിസിയോതെറാപ്പി ഒ.പി\n", style: TextStyle(fontWeight: FontWeight.bold),),
+    (_selectedLanguage == 'English')?
+    textBuild("The physiotherapy OP system is conducted in the clinic four times a month.",):
+    textBuild("മാസത്തിൽ നാല് തവണ ക്ലിനിക്കിൽ ഫിസിയോതെറാപ്പി ഒ.പി സംവിധാനം"
+        " നടന്നുവരുന്നു."),
+    (_selectedLanguage == 'English')?
+    Text("- Psychiatry OP\n", style: TextStyle(fontWeight: FontWeight.bold),):
+    Text("- സൈക്കാട്രീ ഒ.പി\n", style: TextStyle(fontWeight: FontWeight.bold),),
+    (_selectedLanguage == 'English')?
+    textBuild("The OP system is available at the clinic four times a month for patients in need of mental care.",):
+    textBuild("മാനസിക പരിചരണം ആവിശ്യമുള്ള രോഗികൾക്ക് മാസത്തിൽ നാല് തവണ "
+        "ക്ലിനിക്കിൽ വെച്ച് ഒ.പി സംവിധാനം ലഭ്യമാകുന്നു."),
+    (_selectedLanguage == 'English')?
+    Text("- Educational assistance\n", style: TextStyle(fontWeight: FontWeight.bold),):
+    Text("- വിദ്യാഭ്യാസ സഹായം\n", style: TextStyle(fontWeight: FontWeight.bold),),
+    (_selectedLanguage == 'English')?
+    textBuild("Provides educational assistance to palliative care families who are struggling with educational needs.",):
+    textBuild("വിദ്യാഭ്യാസ ആവിശ്യങ്ങൾക്ക് ബുദ്ധിമുട്ട്  നേരിടുന്ന പാലിയേറ്റീവ്"
+        "കുടുംബങ്ങൾക്ക് വിദ്യാഭ്യാസ സഹായം നൽകുന്നു."),
+    (_selectedLanguage == 'English')?
+    Text("- Food assistance\n", style: TextStyle(fontWeight: FontWeight.bold),):
+    Text("- ഭക്ഷ്യ സഹായം\n", style: TextStyle(fontWeight: FontWeight.bold),),
+    (_selectedLanguage == 'English')?
+    textBuild("Food assistance is being provided to needy families under the clinic.",):
+    textBuild("ക്ലിനിക്കിനു കീഴിലെ നിർധനരായ കുടുംബങ്ങൾക്ക് ഭക്ഷ്യസഹായം "
+        "നൽകിവരുന്നു."),
+    (_selectedLanguage == 'English')?
+    Text("- Ambulance\n", style: TextStyle(fontWeight: FontWeight.bold),):
+    Text("- ആംബുലൻസ്\n", style: TextStyle(fontWeight: FontWeight.bold),),
+    (_selectedLanguage == 'English')?
+    textBuild("Edathanathukara Palliative Care Clinic has its own ambulance.",):
+    textBuild("എടത്തനാട്ടുകര പാലിയേറ്റീവ് കെയർ ക്ലിനിക്കിന് കീഴിൽ സ്വന്തമായി ഒരു "
+        "ആംബുലൻസ് ഉണ്ട്."),
+    (_selectedLanguage == 'English')?
+    Text("- Supply of equipment required for patients\n", style: TextStyle(fontWeight: FontWeight.bold),):
+    Text("- രോഗികൾക്ക് ആവിശ്യമായ ഉപകരണങ്ങളുടെ വിതരണം\n", style: TextStyle(fontWeight: FontWeight.bold),),
+    (_selectedLanguage == 'English')?
+    textBuild("Provides equipment and clinical assistance such as wheelchairs, walkers and oxygen concentrators to"
+       "needy patients in need.",):
+    textBuild("ആവിശ്യമായ സാഹചര്യത്തിൽ നിർധനരായ രോഗികൾക്ക് വീൽച്ചെയർ, വാക്കർ,  "
+        "ഓക്സിജൻ കോൺസെൻട്രേറ്റർ മുതലായ ഉപകരണങ്ങളും ക്ലിനിക്കൽ"
+        " സഹായങ്ങളും നൽകുന്നു."),
+    (_selectedLanguage == 'English')?
+    Text("- Student Initiative in Palliative Care\n", style: TextStyle(fontWeight: FontWeight.bold),):
+    Text("- സ്റ്റുഡന്റ് ഇനിഷ്യേറ്റീവ് ഇൻ പാലിയേറ്റീവ് (SIP)\n", style: TextStyle(fontWeight: FontWeight.bold),),
+    (_selectedLanguage == 'English')?
+    textBuild("The system aims to bring the concepts of palliative care to students and engage them in palliative care."
+        "These volunteers are involved in many activities, including home care under the clinic",):
+    textBuild("പാലിയേറ്റീവ് കെയറിന്റെ ആശയങ്ങൾ വിദ്യാർത്ഥികളിൽ എത്തിക്കാനും"
+        " അവരെ പാലിയേറ്റീവ് പ്രവർത്തനങ്ങളിൽ പങ്കാളികളാക്കാനും ഈ സംവിധാനം"
+        " ലക്ഷ്യമിടുന്നു. ക്ലിനിക്കിനു കീഴിലെ ഹോം കെയർ ഉൾപ്പെടെ പല "
+        "പ്രവർത്തനങ്ങളിലും SIP വളണ്ടിയർമാർ പ്രവർത്തനനിരതരാണ്."),
+    (_selectedLanguage == 'English')?
+    Text("- Women's section\n", style: TextStyle(fontWeight: FontWeight.bold),):
+    Text("- വനിതാ വിഭാഗം\n", style: TextStyle(fontWeight: FontWeight.bold),),
+    (_selectedLanguage == 'English')?
+    textBuild("Edathanathukara Palliative Clinic has a women's section consisting of women volunteers.",):
+    textBuild("എടത്തനാട്ടുകര പാലിയേറ്റീവ് ക്ലിനിക്കിന്റെ കീഴിൽ വനിതാ വളണ്ടിയർമാർ"
+        " ഉൾകക്കാള്ളുന്ന ഒരു വനിതാ വിഭാഗം പ്രവർത്തിക്കുന്നുണ്ട്."),
+    (_selectedLanguage == 'English')?
+    Text("- Anyone can be a palliative volunteer\n", style: TextStyle(fontWeight: FontWeight.bold),):
+    Text("- ആർക്കെല്ലാം ഒരു പാലിയേറ്റീവ് വളണ്ടിയർ ആവാം\n", style: TextStyle(fontWeight: FontWeight.bold),),
+    (_selectedLanguage == 'English')?
+    textBuild("Anyone who is willing to provide care to our brothers and sisters who have been living within four walls"
+        "for ages can become palliative volunteers. Being a palliative care volunteer as a community organization"
+        "transcends all racial, religious, political, educational, age and gender differences",):
+    textBuild("കാലങ്ങളായി നാലു ചുമരുകൾക്കുള്ളിൽ മാത്രം ജീവിതം തള്ളിനീക്കുന്ന നമ്മുടെ "
+        "സഹോദരീസഹോദരന്മാർക്ക് സാന്ത്വന പരിചരണം നൽകാൻ സന്നദ്ധതയുള്ള"
+        " ആർക്കും പാലിയേറ്റീവ് വളണ്ടിയർ ആവാം. ഒരു സാമൂഹിക സംഘടന എന്ന"
+        " നിലയിൽ പാലിയേറ്റീവ് കെയറിന്റ വളണ്ടിയർ ആവുക എന്നത് ജാതി, മത,"
+        "രാഷ്ട്രീയ, വിദ്യാഭ്യാസ, പ്രായ, ലിംഗ വ്യത്യാസങ്ങൾക്കെല്ലാം അതീതമാണ്."),
+    (_selectedLanguage == 'English')?
+    Text("- How money is raised for palliative care?\n", style: TextStyle(fontWeight: FontWeight.bold),):
+    Text("- പാലിയേറ്റീവ് സേവനങ്ങൾക്കുള്ള ധനം എങ്ങനെ കണ്ടെത്തുന്നു?\n", style: TextStyle(fontWeight: FontWeight.bold),),
+    (_selectedLanguage == 'English')?
+    textBuild("All services under palliative care are completely free. It costs a lot of money every month. The only"
+        'source of income for palliative care is the amount collected from the natives, the amount collected on'
+        ' January 15 through the students and other contributions. Every penny you contribute to this project is '
+        'valuable. If you would like to contribute to the activities of Edathanathukara Palliative Care Clinic, '
+        "please use the Donate button below.",):
+    textBuild("പാലിയേറ്റീവ് കെയറിന്റെ കീഴിലുള്ള സേവനങ്ങളെല്ലാം തന്നെ പൂർണമായും "
+        "സൗജനയമാണ്. മാസം തോറും വലിയ ഒരു തുക ചിലവു വരുന്നുണ്ട്. നാട്ടുകാരിൽ"
+        " നിന്ന് പിരിച്ചെടുക്കുന്ന തുകയും, വിദ്യാർത്ഥികളിലൂടെ ജനുവരി 15ന് "
+        "പിരിച്ചെടുക്കുന്ന തുകയും മറ്റു സംഭാവനകളുമാണ് പാലിയേറ്റീവ് കെയറിന്റെ"
+        " ഏകവരുമാനം. ഈസംരഭത്തിലേക്ക് നിങ്ങൾ നൽകുന്ന ഓരോ രൂപയും"
+    "വിലപ്പെട്ടതാണ്. താങ്കൾക്ക് എടത്തനാട്ടുകര പാലിയേറ്റീവ് കെയർ ക്ലിനിക്കിന്റെ"
+    " പ്രവർത്തനങ്ങൾക്ക് സംഭാവന ചെയ്യാൻ താൽപര്യമുണ്ടെങ്കിൽ താഴെയുള്ള Donate "
+    "ബട്ടൺ ഉപയോഗിക്കുക."),
+
+    Padding(
+      padding: const EdgeInsets.only(left: 70,right: 70),
+      child: RaisedButton(
+        elevation: 4,
+        color: Colors.lightBlue,
+        onPressed: () {Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => DonateTestScreen())
+        );},
+        textColor: Colors.white,
+        padding: const EdgeInsets.only(left: 20,right: 20),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(15.0))),
+        child: const Text('DONATE', style: TextStyle(fontSize: 17),),
+      ),
+    ),
 
 
 
