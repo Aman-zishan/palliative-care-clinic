@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:palliative_care/components/urls.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'donatetest.dart';
+
 
 class VolunteerScreen extends StatefulWidget {
   @override
@@ -14,11 +15,25 @@ final Shader linearGradient = LinearGradient(
 ).createShader(Rect.fromLTWH(75.0, 50.0, 200.0, 70.0));
 
 class _VolunteerScreenState extends State<VolunteerScreen> {
+  List<String> languages = ['English', 'മലയാളം'];
+  String _selectedLanguage = 'English';
   @override
   Widget build(BuildContext context) {
     // to get size
     var size = MediaQuery.of(context).size;
+    Container textBuild(String text, ) {
 
+
+      return Container(
+
+        padding: const EdgeInsets.only(top: 0,bottom: 30),
+        child: Text(
+          text,
+          style: TextStyle(fontSize: 15),
+          softWrap: true,
+        ),
+      );
+    }
 
 
     return Scaffold(
@@ -27,7 +42,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
           Container(
 
             width: size.width,
-            height: size.height * .25,
+            height: size.height * .255,
             decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.fill,
@@ -37,7 +52,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
           ),
           SafeArea(
             child: Padding(
-              padding: EdgeInsets.only( top: size.height * .05, left: size.height * .05,right: size.height * .05,bottom: 10),
+              padding: EdgeInsets.all( size.height * .05),
               child: Column(
                 children: <Widget>[
                   Container(
@@ -49,49 +64,80 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                         SvgPicture.network(
                           'https://www.flaticon.com/svg/static/icons/svg/3555/3555570.svg',
                           placeholderBuilder: (context) => CircularProgressIndicator(),
+                          fit: BoxFit.cover,
                           width: 60.0,
                         ),
                         SizedBox(
                           width: 16,
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              'Volunteering',
+                              'Volunteer',
                               style: TextStyle(
                                   fontFamily: "Montserrat Medium",
                                   color: Colors.white,
                                   fontSize: 20),
                             ),
-                            Text(
-                              'Register as a volunteer ',
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                  fontFamily: "Montserrat Regular"),
-                            )
+
+                            Padding(padding: EdgeInsets.only(left: 35,right: 0)),
+                            SizedBox(height: 15,),
+                            DropdownButton(
+                              hint: Text(_selectedLanguage),
+                              icon: Icon(Icons.language,color: Colors.black),
+
+                              value: _selectedLanguage,
+                              onChanged: (newValue) {
+                                setState(() {
+                                  _selectedLanguage = newValue;
+                                  print(_selectedLanguage);
+                                });
+                              },
+                              items: languages.map((location) {
+                                return DropdownMenuItem(
+                                  child: new Text(location),
+                                  value: location,
+                                );
+                              }).toList(),
+                            ),
                           ],
                         )
                       ],
                     ),
                   ),
+
                   Container(
-                    padding:  const EdgeInsets.only(top: 70,left: 20,right: 20),
+                    padding:  const EdgeInsets.only(top: 70,left: 5,right: 5),
 
                     child:Column(children: [
-                      Text("Heading 1\n",  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,),),
-                      Text("standard dummy text ever since the 1500s, when an unknown printer"
-                          " took a galley of type and scrambled it to make a type specimen book\n",  style: TextStyle(fontSize: 15,),),],)
+                      SizedBox(height: 20,),
+                      Text(
+                        "VOLUNTEER REGISTRATION ",
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,),
+                      ),
+                      SizedBox(height: 20,),
+                      (_selectedLanguage == 'English')?
+                      textBuild("One who is willing to provide care to our brothers and sisters who have been living within only four walls "
+                          "for ages can become palliative volunteers. Being a palliative care volunteer as a community organization "
+                          "transcends all racial, religious, political, educational, age and gender differences\n\n"
+                        "To register as a volunteer for Edathanattukara Palliative Care society, go to the link below and fill out the form.",):
+                      textBuild("കാലങ്ങളായി നാലു ചുമരുകൾക്കുള്ളിൽ മാത്രം ജീവിതം തള്ളിനീക്കുന്ന നമ്മുടെ "
+                          "സഹോദരീ സഹോദരന്മാർക്ക് സാന്ത്വന പരിചരണം നൽകാൻ സന്നദ്ധതയുള്ള"
+                          " ആർക്കും പാലിയേറ്റീവ് വളണ്ടിയർ ആവാം. ഒരു സാമൂഹിക സംഘടന എന്ന"
+                          " നിലയിൽ പാലിയേറ്റീവ് കെയറിന്റ വളണ്ടിയർ ആവുക എന്നത് ജാതി, മത,"
+                          " രാഷ്ട്രീയ, വിദ്യാഭ്യാസ, പ്രായ, ലിംഗ വ്യത്യാസങ്ങൾക്കെല്ലാം അതീതമാണ്.\n\n"
+                          "എടത്താനാട്ടുകര പാലിയേറ്റീവ് കയറിന്റെ വളണ്ടിയർ ആയി "
+                          "റെജിസ്ട്രർ ചെയ്യാൻ ആയി താഴെ ഉള്ള ലിങ്കിൽ കയറി ഫോം ഫിൽ ചെയ്യൂ"),],)
                     ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 15,),
 
                   RaisedButton(
                     elevation: 4,
                     color: Colors.lightBlue,
 
-                    onPressed: () {  },
+                    onPressed: () {urlfunc.launchURL("https://docs.google.com/forms/d/e/1FAIpQLScPuY73b2i7ZKCMRFI0gO5zrdM7yOICGVog-NSzuQeMc8keTg/viewform?usp=sf_link");  },
                     textColor: Colors.white,
                     padding: const EdgeInsets.only(left: 20,right: 20),
 

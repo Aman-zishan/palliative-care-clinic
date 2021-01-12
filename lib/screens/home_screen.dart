@@ -9,13 +9,16 @@ import 'package:provider/provider.dart';
 import 'package:palliative_care/components/animator.dart';
 import 'about.dart';
 import 'office_contacts.dart';
-import 'donatetest.dart';
+import 'donate.dart';
 import 'registration.dart';
 import 'course.dart';
 import 'dart:io';
 import 'dart:ui';
+import 'contact.dart';
+
 
 class HomeScreen extends StatefulWidget {
+
   HomeScreen({Key key}) : super(key: key);
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -25,16 +28,23 @@ final Shader linearGradient = LinearGradient(
 ).createShader(Rect.fromLTWH(75.0, 50.0, 200.0, 70.0));
 
 class _HomeScreenState extends State<HomeScreen>
+
   with SingleTickerProviderStateMixin {
+
   AnimationController _animationController;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  var subscription;
+  var connectionStatus;
 
   @override
   void initState() {
+
   _animationController =
   AnimationController(vsync: this, duration: Duration(milliseconds: 800));
   super.initState();
+
   }
+
 
   // function to toggle circle animation
   changeThemeMode(bool theme) {
@@ -44,7 +54,11 @@ class _HomeScreenState extends State<HomeScreen>
   _animationController.reverse(from: 1.0);
   }
   }
-
+  @override
+  dispose() {
+    super.dispose();
+    subscription.cancel();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -184,7 +198,7 @@ class _HomeScreenState extends State<HomeScreen>
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
   Text(
-  'Palliative Care Clinic',
+  'Palliative Care Society',
   style: TextStyle(
   fontFamily: "Montserrat Medium",
   color: Colors.white,
@@ -202,13 +216,14 @@ class _HomeScreenState extends State<HomeScreen>
   ],
   ),
   ),
-  Expanded(
+Center(
 
   child: GridView.count(
   mainAxisSpacing: 10,
   crossAxisSpacing: 10,
   primary: false,
   crossAxisCount: 2,
+  shrinkWrap: true,
   children: <Widget>[
   GestureDetector(
 
@@ -357,38 +372,9 @@ class _HomeScreenState extends State<HomeScreen>
   ),
   ),
   ),
-  GestureDetector(onTap: ( ){},
-  child: Card(
-  shape:RoundedRectangleBorder(
-  borderRadius: BorderRadius.circular(8)
-  ),
-  elevation: 4,
-  child: Column(
-  mainAxisAlignment: MainAxisAlignment.center,
-  children: <Widget>[
-  SvgPicture.network(
-  'https://www.flaticon.com/svg/static/icons/svg/3555/3555500.svg',
-  placeholderBuilder: (context) => CircularProgressIndicator(),
-  height: 80,
-  ),
-  SizedBox(height: 8,),
-  Text(
-  'District Contacts',
-  style: cardTextStyle,
-  ),
-  SizedBox(height: 2,),
-  Text(
-  "Contact details",
-  style: TextStyle(
-  color: Colors.grey,
-  fontSize: 10
-  )
-  ),
-  ],
-  ),
-  ),
-  ),
-  GestureDetector(onTap: (){Navigator.push(
+
+  GestureDetector(
+    onTap: (){Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => CourseScreen())
   );},
@@ -422,6 +408,40 @@ class _HomeScreenState extends State<HomeScreen>
   ),
   ),
   ),
+    GestureDetector(onTap: ( ){Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ContactScreen())
+    );},
+      child: Card(
+        shape:RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8)
+        ),
+        elevation: 4,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SvgPicture.network(
+              'https://www.flaticon.com/svg/static/icons/svg/3555/3555500.svg',
+              placeholderBuilder: (context) => CircularProgressIndicator(),
+              height: 80,
+            ),
+            SizedBox(height: 8,),
+            Text(
+              'Contact Us',
+              style: cardTextStyle,
+            ),
+            SizedBox(height: 2,),
+            Text(
+                "Contact details",
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 10
+                )
+            ),
+          ],
+        ),
+      ),
+    ),
 
   ],
 

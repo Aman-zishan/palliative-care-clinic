@@ -29,7 +29,9 @@ void main() async {
 // to ensure we have the themeProvider before the app starts lets make a few more changes.
 
 class AppStart extends StatelessWidget {
+
   const AppStart({Key key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +43,7 @@ class AppStart extends StatelessWidget {
 }
 
 class MyApp extends StatefulWidget with WidgetsBindingObserver {
+
   final ThemeProvider themeProvider;
 
   const MyApp({Key key, @required this.themeProvider}) : super(key: key);
@@ -49,13 +52,14 @@ class MyApp extends StatefulWidget with WidgetsBindingObserver {
 }
 
 class _MyAppState extends State<MyApp> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: widget.themeProvider.themeData(),
       debugShowCheckedModeBanner: false,
       home: AnimatedSplash(
-        imagePath: 'assets/images/test-splash.png',
+        imagePath: 'assets/images/test-splash.jpg',
         home: HomeScreen(),
         duration: 2500,
         type: AnimatedSplashType.StaticDuration,

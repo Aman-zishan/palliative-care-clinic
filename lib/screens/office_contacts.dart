@@ -121,6 +121,50 @@ class _OfficeScreenState extends State<OfficeScreen> {
               //contact list
               children: [
                 GestureDetector(
+                  onTap: (){ launch("tel://9447841266");  },
+                  child:  Container(
+
+                    height: 75,
+                    child: Card(
+
+
+                      shape:RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)
+                      ),
+                      elevation: 4,
+                      child: Row(
+
+
+
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(padding: const EdgeInsets.only(left: 10),
+                            child:  SvgPicture.network(
+                              'https://www.flaticon.com/svg/static/icons/svg/561/561253.svg',
+                              height: 30,
+                            ),),
+                          SizedBox(height: 8,),
+                          Padding(padding: const EdgeInsets.only(left: 5),
+
+                            child: Container(
+                              padding: const EdgeInsets.only(left: 10),
+
+                              child:Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Secretary',
+                                    style: cardTextStyle,
+                                  ),
+                                  Text("Ph:  +91 9447841266", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                              ),),),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
                   onTap: (){ launch("tel://949781083"); },
                   child:  Container(
 
@@ -167,7 +211,7 @@ class _OfficeScreenState extends State<OfficeScreen> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: (){ launch("tel://9496516858"); },
+                  onTap: (){launch("tel://9495397848");   },
                   child:  Container(
 
                     height: 75,
@@ -200,10 +244,10 @@ class _OfficeScreenState extends State<OfficeScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Vice Chairman 1',
+                                    'Treasurer',
                                     style: cardTextStyle,
                                   ),
-                                  Text("Ph:  +91 9496516858", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                                  Text("Ph:  +91 9495397848", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
                               ),),),
 
 
@@ -213,7 +257,7 @@ class _OfficeScreenState extends State<OfficeScreen> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: (){launch("tel://9447622690");   },
+                  onTap: (){  launch("tel://9656101420"); },
                   child:  Container(
 
                     height: 75,
@@ -246,103 +290,13 @@ class _OfficeScreenState extends State<OfficeScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Vice Chairman 2',
+                                    'Ambulance',
                                     style: cardTextStyle,
                                   ),
-                                  Text("Ph:  +91 9447622690", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                                  Text("Ph:  +91 9656101420", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
                               ),),),
 
 
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: (){ launch("tel://9946991358");  },
-                  child:  Container(
-
-                    height: 75,
-                    child: Card(
-
-
-                      shape:RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)
-                      ),
-                      elevation: 4,
-                      child: Row(
-
-
-
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(padding: const EdgeInsets.only(left: 10),
-                            child:  SvgPicture.network(
-                              'https://www.flaticon.com/svg/static/icons/svg/561/561253.svg',
-                              height: 30,
-                            ),),
-                          SizedBox(height: 8,),
-                          Padding(padding: const EdgeInsets.only(left: 5),
-
-                            child: Container(
-                              padding: const EdgeInsets.only(left: 10),
-
-                              child:Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Vice Chairman 3',
-                                    style: cardTextStyle,
-                                  ),
-                                  Text("Ph:  +91 9946991358", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
-                              ),),),
-
-
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: (){ launch("tel://9447841266");  },
-                  child:  Container(
-
-                    height: 75,
-                    child: Card(
-
-
-                      shape:RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)
-                      ),
-                      elevation: 4,
-                      child: Row(
-
-
-
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(padding: const EdgeInsets.only(left: 10),
-                            child:  SvgPicture.network(
-                              'https://www.flaticon.com/svg/static/icons/svg/561/561253.svg',
-                              height: 30,
-                            ),),
-                          SizedBox(height: 8,),
-                          Padding(padding: const EdgeInsets.only(left: 5),
-
-                            child: Container(
-                              padding: const EdgeInsets.only(left: 10),
-
-                              child:Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Secretary',
-                                    style: cardTextStyle,
-                                  ),
-                                  Text("Ph:  +91 9447841266", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
-                              ),),),
                         ],
                       ),
                     ),
@@ -486,8 +440,9 @@ class _OfficeScreenState extends State<OfficeScreen> {
                     ),
                   ),
                 ),
+
                 GestureDetector(
-                  onTap: (){launch("tel://9495397848");   },
+                  onTap: (){ launch("tel://9496516858"); },
                   child:  Container(
 
                     height: 75,
@@ -520,10 +475,10 @@ class _OfficeScreenState extends State<OfficeScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Treasurer',
+                                    'Vice Chairman 1',
                                     style: cardTextStyle,
                                   ),
-                                  Text("Ph:  +91 9495397848", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                                  Text("Ph:  +91 9496516858", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
                               ),),),
 
 
@@ -533,7 +488,7 @@ class _OfficeScreenState extends State<OfficeScreen> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: (){  launch("tel://9656101420"); },
+                  onTap: (){launch("tel://9447622690");   },
                   child:  Container(
 
                     height: 75,
@@ -566,10 +521,10 @@ class _OfficeScreenState extends State<OfficeScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Ambulance',
+                                    'Vice Chairman 2',
                                     style: cardTextStyle,
                                   ),
-                                  Text("Ph:  +91 9656101420", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                                  Text("Ph:  +91 9447622690", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
                               ),),),
 
 
@@ -578,6 +533,53 @@ class _OfficeScreenState extends State<OfficeScreen> {
                     ),
                   ),
                 ),
+                GestureDetector(
+                  onTap: (){ launch("tel://9946991358");  },
+                  child:  Container(
+
+                    height: 75,
+                    child: Card(
+
+
+                      shape:RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)
+                      ),
+                      elevation: 4,
+                      child: Row(
+
+
+
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(padding: const EdgeInsets.only(left: 10),
+                            child:  SvgPicture.network(
+                              'https://www.flaticon.com/svg/static/icons/svg/561/561253.svg',
+                              height: 30,
+                            ),),
+                          SizedBox(height: 8,),
+                          Padding(padding: const EdgeInsets.only(left: 5),
+
+                            child: Container(
+                              padding: const EdgeInsets.only(left: 10),
+
+                              child:Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Vice Chairman 3',
+                                    style: cardTextStyle,
+                                  ),
+                                  Text("Ph:  +91 9946991358", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                              ),),),
+
+
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
                 copyright],
             ),)
         ],

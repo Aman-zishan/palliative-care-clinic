@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:palliative_care/components/urls.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class DonateTestScreen extends StatefulWidget {
+class ContactScreen extends StatefulWidget {
   @override
-  _DonateTestScreenState createState() => _DonateTestScreenState();
+  _ContactScreenState createState() => _ContactScreenState();
 }
 final Shader linearGradient = LinearGradient(
   colors: <Color>[Color.fromARGB(100, 13, 216,60), Color.fromARGB(100, 13, 209, 180), Color.fromARGB(100, 0, 212, 255)],
 ).createShader(Rect.fromLTWH(75.0, 50.0, 200.0, 70.0));
 
-class _DonateTestScreenState extends State<DonateTestScreen> {
+class _ContactScreenState extends State<ContactScreen> {
   @override
   Widget build(BuildContext context) {
     // to get size
@@ -52,15 +54,15 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                         SvgPicture.network(
+                        SvgPicture.network(
 
-                            'https://www.flaticon.com/svg/static/icons/svg/3555/3555601.svg',
-                            placeholderBuilder: (context) => CircularProgressIndicator(),
-                            fit: BoxFit.cover,
+                          'https://www.flaticon.com/svg/static/icons/svg/3555/3555500.svg',
+                          placeholderBuilder: (context) => CircularProgressIndicator(),
+                          fit: BoxFit.cover,
 
 
-                            width: 60.0,
-                          ),
+                          width: 60.0,
+                        ),
 
 
                         SizedBox(
@@ -71,7 +73,7 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'Donate',
+                              'Contact Us',
                               style: TextStyle(
                                   fontFamily: "Montserrat Medium",
                                   color: Colors.white,
@@ -85,26 +87,16 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                 ],
               ),),
           ),
-   Padding(padding: const EdgeInsets.only(top: 230),
-
-     child: Align(
-       alignment: Alignment.topCenter,
-       child:Text("Account details and payment", style: new TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),),),
-          Padding(padding: const EdgeInsets.only(top: 280,left: 20),
-
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child:Column(children: [Text("Name: Palliative care clinic\nAccount number: xxxx xxxxx\nBranch: xxxx\nIFSC code: xxxx", style: new TextStyle(fontSize: 17,fontWeight: FontWeight.normal),)],),),),
 
           Container(
-            padding:  const EdgeInsets.only(top: 380,left: 20,right: 20),
+            padding:  const EdgeInsets.only(top: 260,left: 20,right: 20),
 
             child: ListView(
               //contact list
               children: [
 
                 GestureDetector(
-                  onTap: (){  },
+                  onTap: (){ urlfunc.launchURL("https://instagram.com/palliativeedathanattukara?igshid=z08tcysrb0mb");},
                   child:  Container(
 
                     height: 70,
@@ -124,11 +116,13 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                        Image.asset("assets/images/gpay.png",height: 30,)],
-                              ),),),
+                         Icon(FontAwesomeIcons.instagram, color: Colors.black),
+                          SizedBox(width: 20,),
+                          Text("Instagram", style: TextStyle(fontSize: 17,color: Colors.black),)],
+                      ),),),
                 ),
                 GestureDetector(
-                  onTap: (){  },
+                  onTap: (){ urlfunc.launchURL("https://www.facebook.com/groups/550155425193809/?ref=share"); },
                   child:  Container(
 
                     height: 70,
@@ -147,14 +141,18 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Image.asset("assets/images/paytm.png",height: 30,)],
+                          Icon(FontAwesomeIcons.facebook,color: Colors.black),
+                          SizedBox(width: 20,),
+                          Text("Facebook", style: TextStyle(fontSize: 17,color: Colors.black),)
+
+                        ],
                       ),),),
                 ),
                 GestureDetector(
-                  onTap: (){  },
+                  onTap: (){urlfunc.launchURL("mailto:palliativeedk@gmail.com");  },
                   child:  Container(
 
-                    height: 75,
+                    height: 70,
                     child: Card(
                       color: Colors.white,
 
@@ -164,16 +162,43 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                       ),
                       elevation: 4,
                       child: Row(
-
-
-
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
+
                         children: <Widget>[
-                          Image.asset("assets/images/phonepe.png",height: 50,)],
+                          Icon(FontAwesomeIcons.envelope,color: Colors.black),
+                          SizedBox(width: 20,),
+                          Text("Email", style: TextStyle(fontSize: 17,color: Colors.black),)
+
+                        ],
                       ),),),
                 ),
-                ],
+                GestureDetector(
+                  onTap: (){ urlfunc.launchURL("https://goo.gl/maps/BQgV1MUBK24iZKfB7"); },
+                  child:  Container(
+
+                    height: 70,
+                    child: Card(
+                      color: Colors.white,
+
+
+                      shape:RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)
+                      ),
+                      elevation: 4,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+
+                        children: <Widget>[
+                          Icon(FontAwesomeIcons.map,color: Colors.black),
+                          SizedBox(width: 20,),
+                          Text("Location", style: TextStyle(fontSize: 17,color: Colors.black),)
+
+                        ],
+                      ),),),
+                ),
+              ],
             ),),
           Container(
             child: Padding(

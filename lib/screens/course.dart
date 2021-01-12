@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class CourseScreen extends StatefulWidget {
@@ -14,6 +15,8 @@ final Shader linearGradient = LinearGradient(
 ).createShader(Rect.fromLTWH(75.0, 50.0, 200.0, 70.0));
 
 class _CourseScreenState extends State<CourseScreen> {
+  List<String> languages = ['English', 'മലയാളം'];
+  String _selectedLanguage = 'English';
   @override
   Widget build(BuildContext context) {
     // to get size
@@ -82,7 +85,7 @@ class _CourseScreenState extends State<CourseScreen> {
           ),
           SafeArea(
             child: Padding(
-              padding: EdgeInsets.all(size.height * .05),
+              padding: EdgeInsets.all( size.height * .05),
               child: Column(
                 children: <Widget>[
                   Container(
@@ -92,90 +95,113 @@ class _CourseScreenState extends State<CourseScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         SvgPicture.network(
-
-                          'https://www.flaticon.com/svg/static/icons/svg/3555/3555625.svg',
+                          'https://www.flaticon.com/svg/static/icons/svg/3555/3555226.svg',
                           placeholderBuilder: (context) => CircularProgressIndicator(),
                           fit: BoxFit.cover,
-
-
                           width: 60.0,
                         ),
-
-
                         SizedBox(
                           width: 16,
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              'Training Course',
+                              'Courses',
                               style: TextStyle(
                                   fontFamily: "Montserrat Medium",
                                   color: Colors.white,
                                   fontSize: 20),
                             ),
 
+                            Padding(padding: EdgeInsets.only(left: 40,right: 0)),
+                            SizedBox(height: 15,),
+                            DropdownButton(
+                              hint: Text(_selectedLanguage),
+                              icon: Icon(Icons.language,color: Colors.black),
 
-
+                              value: _selectedLanguage,
+                              onChanged: (newValue) {
+                                setState(() {
+                                  _selectedLanguage = newValue;
+                                  print(_selectedLanguage);
+                                });
+                              },
+                              items: languages.map((location) {
+                                return DropdownMenuItem(
+                                  child: new Text(location),
+                                  value: location,
+                                );
+                              }).toList(),
+                            ),
                           ],
-                        ),
-
-
+                        )
                       ],
-
-                    ),
-
-
-                  ),
-                  buttonSection,
-
-                  Align(
-                    child:Container(
-                      padding: const EdgeInsets.only(top: 50,),
-                      child: Text(
-                        "HEADING",
-                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,),
-                      ),
                     ),
                   ),
+
+                  Container(
+                      padding:  const EdgeInsets.only(top: 70,left: 5,right: 5),
+
+                      child:Column(children: [
+                        SizedBox(height: 20,),
+                        Text(
+                          "TRAINING COURSES",
+                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,),
+                        ),
+                        SizedBox(height: 20,),
+                        (_selectedLanguage == 'English')?
+                        textBuild("A four month Palliative Nursing Course is being conducted under the Edathanattukara Palliative Care Society.  In addition, there is a two-year nursing course for 10th graders, +2 for people between the ages of 18 and 40 (male and female)."
+                            ,):
+                        textBuild("എടത്തനാട്ടുകര പാലിയേറ്റീവ്‌ കെയർ സൊസൈറ്റിക്ക്‌ കീഴിൽ 4 മാസ പാലിയേറ്റീവ്‌ നെഴ്സിംഗ്‌ കോഴ്‌സ്‌ നടന്ന്  "
+                            "വരുന്നു. കൂടാതെ പത്താം ക്ലാസ്‌ , +2 കഴിഞ്ഞ 18 നും 40 വയസ്സിനും ഇടയിലുള്ള  ആളുകൾക്ക്‌ ( ആൺ ,പെൺ ) "
+                            " രണ്ട്‌ വർഷ നെഴ്സിംഗ്‌ കോഴ്സും നടന്ന് വരുന്നു."
+  ),],)
+                  ),
+                  SizedBox(height: 20,),
+
+                  RaisedButton(
+                    elevation: 4,
+                    color: Colors.lightBlue,
+
+                    onPressed: () {  },
+                    textColor: Colors.white,
+                    padding: const EdgeInsets.only(left: 20,right: 20),
+
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15.0))),
+
+
+
+                    child: const Text('REGISTER', style: TextStyle(fontSize: 17),),
+                  ),
+
+
+
+
                 ],
-              ),),
+              ),
+            ),
           ),
           Container(
-            padding:  const EdgeInsets.only(top: 280,left: 20,right: 20),
-            child: ListView(
-              children: [
-                Text("Heading 1\n", style: TextStyle(fontWeight: FontWeight.bold),),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 40),
+              child: Align(
+                alignment: FractionalOffset.bottomCenter,
 
-                textBuild("Lorem Ipsum is simply dummy text of the printing"
-                    " and typesetting industry. Lorem Ipsum has been the industry's "
-                    "standard dummy text ever since the 1500s, when an unknown printer"
-                    " took a galley of type and scrambled it to make a type specimen book.",),
-                Text("Heading 1\n", style: TextStyle(fontWeight: FontWeight.bold),),
-                textBuild("Lorem Ipsum is simply dummy text of the printing"
-                    " and typesetting industry. Lorem Ipsum has been the industry's "
-                    "standard dummy text ever since the 1500s, when an unknown printer"
-                    " took a galley of type and scrambled it to make a type specimen book.",),
-                Text("Heading 1\n", style: TextStyle(fontWeight: FontWeight.bold),),
-                textBuild("Lorem Ipsum is simply dummy text of the printing"
-                    " and typesetting industry. Lorem Ipsum has been the industry's "
-                    "standard dummy text ever since the 1500s, when an unknown printer"
-                    " took a galley of type and scrambled it to make a type specimen book.",),
-                textBuild("Lorem Ipsum is simply dummy text of the printing"
-                    " and typesetting industry. Lorem Ipsum has been the industry's "
-                    "standard dummy text ever since the 1500s, when an unknown printer"
-                    " took a galley of type and scrambled it to make a type specimen book.",),
-                textBuild("Lorem Ipsum is simply dummy text of the printing"
-                    " and typesetting industry. Lorem Ipsum has been the industry's "
-                    "standard dummy text ever since the 1500s, when an unknown printer"
-                    " took a galley of type and scrambled it to make a type specimen book.",),
+                child:  GestureDetector(
+                  onTap: (){_launchURL();},
+                  child: Text("© Developed by icodex",
+                    style: new TextStyle(
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold,
+                        foreground: Paint()..shader = linearGradient),
+                  ),),
+              ),
+            ),
+          ),
 
-
-
-                copyright],
-            ),)
         ],
       ),
     );
@@ -207,6 +233,14 @@ class _CourseScreenState extends State<CourseScreen> {
       ],
     );
 
+  }
+  _launchURL() async {
+    const url = 'https://www.amanzishan.me';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
 
