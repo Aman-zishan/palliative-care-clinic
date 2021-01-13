@@ -56,11 +56,12 @@ flutter:
 
   assets:
     - assets/images/top_header.png
-    - assets/images/test-splash.jpg
+    - assets/images/test-splash.png
     - assets/images/gpay.png
     - assets/images/paytm.png
     - assets/images/phonepe.png
     - assets/images/loading.gif
+    - assets/images/logo.png
 
 
 

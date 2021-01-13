@@ -17,7 +17,7 @@ final Shader linearGradient = LinearGradient(
 
 class _AboutScreenState extends State<AboutScreen> {
   List<String> languages = ['English', 'മലയാളം'];
-  String _selectedLanguage = 'English';
+  String _selectedLanguage = 'മലയാളം';
   @override
   Widget build(BuildContext context) {
     // to get size

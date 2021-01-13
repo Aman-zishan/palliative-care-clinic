@@ -185,9 +185,9 @@ class _HomeScreenState extends State<HomeScreen>
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
   CircleAvatar(
-  radius: 32,
+  radius: 30,
   backgroundImage: NetworkImage(
-  'https://www.adultpalliativehub.com/sites/all/themes/palliativehub/images/panel-icon-3.png'
+  'https://raw.githubusercontent.com/Aman-zishan/palliative-care-clinic/master/assets/images/test-splash.jpg?token=ANFN55AJ4FNKAJHU47GCAKDAA2XHI'
   ),
   ),
   SizedBox(

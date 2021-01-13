@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:palliative_care/components/urls.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
@@ -16,7 +17,7 @@ final Shader linearGradient = LinearGradient(
 
 class _CourseScreenState extends State<CourseScreen> {
   List<String> languages = ['English', 'മലയാളം'];
-  String _selectedLanguage = 'English';
+  String _selectedLanguage = 'മലയാളം';
   @override
   Widget build(BuildContext context) {
     // to get size
@@ -165,7 +166,7 @@ class _CourseScreenState extends State<CourseScreen> {
                     elevation: 4,
                     color: Colors.lightBlue,
 
-                    onPressed: () {  },
+                    onPressed: () {urlfunc.launchURL("https://docs.google.com/forms/d/e/1FAIpQLSfC1wa2r8qWLohM88gKujyReOgC3X9mt46MAdsqVW2KThR9Rg/viewform?usp=sf_link") ; },
                     textColor: Colors.white,
                     padding: const EdgeInsets.only(left: 20,right: 20),
 

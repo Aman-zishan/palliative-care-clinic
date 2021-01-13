@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
       theme: widget.themeProvider.themeData(),
       debugShowCheckedModeBanner: false,
       home: AnimatedSplash(
-        imagePath: 'assets/images/test-splash.jpg',
+        imagePath: 'assets/images/logo.png',
         home: HomeScreen(),
         duration: 2500,
         type: AnimatedSplashType.StaticDuration,
