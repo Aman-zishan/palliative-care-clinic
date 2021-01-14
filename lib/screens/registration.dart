@@ -122,14 +122,14 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                       textBuild("One who is willing to provide care to our brothers and sisters who have been living within only four walls "
                           "for ages can become palliative volunteers. Being a palliative care volunteer as a community organization "
                           "transcends all racial, religious, political, educational, age and gender differences\n\n"
-                        "To register as a volunteer for Edathanattukara Palliative Care society, go to the link below and fill out the form.",):
+                        "To register as a volunteer for Edathanattukara Palliative Care society, click the register button below and fill up the form.",):
                       textBuild("കാലങ്ങളായി നാലു ചുമരുകൾക്കുള്ളിൽ മാത്രം ജീവിതം തള്ളിനീക്കുന്ന നമ്മുടെ "
                           "സഹോദരീ സഹോദരന്മാർക്ക് സാന്ത്വന പരിചരണം നൽകാൻ സന്നദ്ധതയുള്ള"
                           " ആർക്കും പാലിയേറ്റീവ് വളണ്ടിയർ ആവാം. ഒരു സാമൂഹിക സംഘടന എന്ന"
                           " നിലയിൽ പാലിയേറ്റീവ് കെയറിന്റ വളണ്ടിയർ ആവുക എന്നത് ജാതി, മത,"
                           " രാഷ്ട്രീയ, വിദ്യാഭ്യാസ, പ്രായ, ലിംഗ വ്യത്യാസങ്ങൾക്കെല്ലാം അതീതമാണ്.\n\n"
-                          "എടത്താനാട്ടുകര പാലിയേറ്റീവ് കയറിന്റെ വളണ്ടിയർ ആയി "
-                          "റെജിസ്ട്രർ ചെയ്യാൻ ആയി താഴെ ഉള്ള ലിങ്കിൽ കയറി ഫോം ഫിൽ ചെയ്യൂ"),],)
+                          "എടത്താനാട്ടുകര പാലിയേറ്റീവ് കെയറിന്റെ വളണ്ടിയർ ആയി "
+                          "റെജിസ്ട്രർ ചെയ്യാൻ ആയി താഴെ ഉള്ള റെജിസ്ട്രർ ബട്ടൺ ക്ലിക്ക് ചെയൂ"),],)
                     ),
                   SizedBox(height: 15,),
 
@@ -181,7 +181,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
   }
   //external links to form, developer contact etc.
   _launchURL() async {
-    const url = 'https://www.amanzishan.me';
+    const url = 'https://www.instagram.com/_icodex_/';
     if (await canLaunch(url)) {
       await launch(url);
     } else {

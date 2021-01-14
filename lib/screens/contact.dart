@@ -226,7 +226,7 @@ class _ContactScreenState extends State<ContactScreen> {
 
   }
   _launchURL() async {
-    const url = 'https://www.amanzishan.me';
+    const url = 'https://www.instagram.com/_icodex_/';
     if (await canLaunch(url)) {
       await launch(url);
     } else {

@@ -200,16 +200,16 @@ child: ListView(
   children: [
 
 (_selectedLanguage == 'English')?
-    textBuild("Edathanattukara Palliative Care is a community owned company providing its services in Alanallur, "
+    textBuild("Edathanattukara Palliative Care is a community owned fellowship providing its services in Alanallur, "
       "Kottopadam, Thachanattukara and Thazhekode panchayats since 2008. The project aims to provide in patient"
         " care at home by lifting the bedridden patients out of their mental, physical, financial and social"
      " conflicts. Caring for the beneficiaries of this project, which are our brothers and sisters in the "
-      "community which we belong, should be seen as a social responsibility. When patients are neglected and "
+      "community which we belong should be seen as a social responsibility. When patients are neglected and "
       "old age homes sprout like mushrooms, and pity and goodness only color the camera flashes, the work of "
       "palliative care is done sincerely and transparently in the firm belief that palliative care is not the"
       " generosity of any servant and that it is the right of every bedridden patient."):
 textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എടത്തനാട്ടുകരയിൽ 2008 മുതൽ പ്രവർത്തിച്ചു"
-" വരുന്ന പാലിയേറ്റീവ് കയർ സൊസൈറ്റി. ഒരു സാമൂഹ്യ ഉടമസ്ഥതയിലുള്ള "
+" വരുന്ന പാലിയേറ്റീവ് കെയർ സൊസൈറ്റി. ഒരു സാമൂഹ്യ ഉടമസ്ഥതയിലുള്ള "
 "സ്ഥാപനമാണ് അതിന്റെ സേവനങ്ങൾ അലനല്ലൂർ, കോട്ടോപ്പാടം, തച്ചനാട്ടുകര, "
 "താഴേക്കോട് പഞ്ചായത്തുകളിൽ ലഭിച്ചുകൊണ്ടിരിക്കുന്നു. കിടപ്പിലായ "
 "രോഗികളെ അവരുടെ മാനസികവും ശാരീരികവും സാമ്പത്തികവും "
@@ -233,10 +233,10 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
     Text("- ഹോം കെയർ\n", style: TextStyle(fontWeight: FontWeight.bold,),),
 
     (_selectedLanguage == 'English')?
-    textBuild("To ensure palliative care for bedridden patients at home, two-vehicle doctor-led doctor home care is"
+    textBuild("To ensure palliative care for bedridden patients at home, doctor-led doctor home care is"
         " conducted four times a month, nurse-led nursing home care thirty-two times a month, and volunteer "
-        "home care, which consists of only volunteers about thirty times"
-        " took a galley of type and scrambled it to make a type specimen book.",):
+        "home care, which consists of only volunteers about thirty times."
+      ,):
     textBuild("കിടപ്പിലായ രോഗികളെ വീടുകളിൽ ചെന്ന് സാന്ത്വന പരിചരണം "
         "ഉറപ്പുവരുത്തുവാൻ   രണ്ടു വാഹ്നങ്ങളിലായി മാസത്തിൽ നാല് തവണ ഡോക്ടറുടെ"
         " നേതൃത്വത്തിലുള്ള ഡോക്ടർസ് ഹോം കെയറും മാസത്തിൽ മുപ്പത്തിരണ്ട് തവണ"
@@ -246,9 +246,9 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
     Text("- Day Care\n", style: TextStyle(fontWeight: FontWeight.bold),):
     Text("- ഡേ കെയർ\n", style: TextStyle(fontWeight: FontWeight.bold),),
     (_selectedLanguage == 'English')?
-    textBuild("Four times a month, the society's day care system allows patients trapped in a room, including those with"
+    textBuild("Four times a month, the society's day care system allows patients trapped in a room including those with"
         "spinal cord injuries, to communicate with the outside world and thereby reduce their stress. Organizes "
-        "job training and other events for the customers of the day care system.",):
+        "job training and other events for the consumer's of the day care system.",):
     textBuild("നട്ടെല്ലിന് ക്ഷതമേറ്റവർ ഉൾപ്പെടെ ഒരു മുറിയിൽ തളക്കകപ്പട്ട രോഗികളെ "
         "മാസത്തിൽ നാല് തവണ ക്ലിനിക്കിൽ ഡേ കെയർ സംവിധാനത്തിലൂടെ പുറം"
         " ലോകവുമായി ബന്ധപ്പെടാനും അതുവഴി അവരുകട മാനസിക സംഘർഷം"
@@ -258,7 +258,7 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
     Text("- Physiotherapy OP\n", style: TextStyle(fontWeight: FontWeight.bold),):
     Text("- ഫിസിയോതെറാപ്പി ഒ.പി\n", style: TextStyle(fontWeight: FontWeight.bold),),
     (_selectedLanguage == 'English')?
-    textBuild("The physiotherapy OP system is conducted in the society four times a month.",):
+    textBuild("The physiotherapy OP system is conducted at the clinic four times a month.",):
     textBuild("മാസത്തിൽ നാല് തവണ ക്ലിനിക്കിൽ ഫിസിയോതെറാപ്പി ഒ.പി സംവിധാനം"
         " നടന്നുവരുന്നു."),
     (_selectedLanguage == 'English')?
@@ -286,14 +286,14 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
     Text("- Ambulance\n", style: TextStyle(fontWeight: FontWeight.bold),):
     Text("- ആംബുലൻസ്\n", style: TextStyle(fontWeight: FontWeight.bold),),
     (_selectedLanguage == 'English')?
-    textBuild("Edathanathukara Palliative Care society has its own ambulance.",):
+    textBuild("Edathanattukara Palliative Care society has its own ambulance.",):
     textBuild("എടത്തനാട്ടുകര പാലിയേറ്റീവ് കെയർ ക്ലിനിക്കിന് കീഴിൽ സ്വന്തമായി ഒരു "
         "ആംബുലൻസ് ഉണ്ട്."),
     (_selectedLanguage == 'English')?
     Text("- Supply of equipment required for patients\n", style: TextStyle(fontWeight: FontWeight.bold),):
     Text("- രോഗികൾക്ക് ആവിശ്യമായ ഉപകരണങ്ങളുടെ വിതരണം\n", style: TextStyle(fontWeight: FontWeight.bold),),
     (_selectedLanguage == 'English')?
-    textBuild("Provides equipment and clinical assistance such as wheelchairs, walkers and oxygen concentrators to"
+    textBuild("Provides equipment and clinical assistance such as wheelchairs, walkers and oxygen concentrators to "
        "needy patients in need.",):
     textBuild("ആവിശ്യമായ സാഹചര്യത്തിൽ നിർധനരായ രോഗികൾക്ക് വീൽച്ചെയർ, വാക്കർ,  "
         "ഓക്സിജൻ കോൺസെൻട്രേറ്റർ മുതലായ ഉപകരണങ്ങളും ക്ലിനിക്കൽ"
@@ -309,10 +309,10 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
         " ലക്ഷ്യമിടുന്നു. ക്ലിനിക്കിനു കീഴിലെ ഹോം കെയർ ഉൾപ്പെടെ പല "
         "പ്രവർത്തനങ്ങളിലും SIP വളണ്ടിയർമാർ പ്രവർത്തനനിരതരാണ്."),
     (_selectedLanguage == 'English')?
-    Text("- Women's section\n", style: TextStyle(fontWeight: FontWeight.bold),):
+    Text("- Women's Wing\n", style: TextStyle(fontWeight: FontWeight.bold),):
     Text("- വനിതാ വിഭാഗം\n", style: TextStyle(fontWeight: FontWeight.bold),),
     (_selectedLanguage == 'English')?
-    textBuild("Edathanathukara Palliative society has a women's section consisting of women volunteers.",):
+    textBuild("Edathanattukara Palliative society has a women's wing consisting of women volunteers.",):
     textBuild("എടത്തനാട്ടുകര പാലിയേറ്റീവ് ക്ലിനിക്കിന്റെ കീഴിൽ വനിതാ വളണ്ടിയർമാർ"
         " ഉൾകക്കാള്ളുന്ന ഒരു വനിതാ വിഭാഗം പ്രവർത്തിക്കുന്നുണ്ട്."),
     (_selectedLanguage == 'English')?
@@ -321,14 +321,15 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
     (_selectedLanguage == 'English')?
     textBuild("One who is willing to provide care to our brothers and sisters who have been living within four walls "
         "for ages can become palliative volunteers. Being a palliative care volunteer as a community organization "
-        "transcends all racial, religious, political, educational, age and gender differences",):
+        "transcends all racial, religious, political, educational, age and gender differences\n\n"
+      "To register as a volunteer for Edathanattukara Palliative Care society, click the register button below and fill up the form.",):
     textBuild("കാലങ്ങളായി നാലു ചുമരുകൾക്കുള്ളിൽ മാത്രം ജീവിതം തള്ളിനീക്കുന്ന നമ്മുടെ "
         "സഹോദരീ സഹോദരന്മാർക്ക് സാന്ത്വന പരിചരണം നൽകാൻ സന്നദ്ധതയുള്ള"
         " ആർക്കും പാലിയേറ്റീവ് വളണ്ടിയർ ആവാം. ഒരു സാമൂഹിക സംഘടന എന്ന"
         " നിലയിൽ പാലിയേറ്റീവ് കെയറിന്റ വളണ്ടിയർ ആവുക എന്നത് ജാതി, മത,"
         "രാഷ്ട്രീയ, വിദ്യാഭ്യാസ, പ്രായ, ലിംഗ വ്യത്യാസങ്ങൾക്കെല്ലാം അതീതമാണ്.\n\n"
-        "എടത്താനാട്ടുകര പാലിയേറ്റീവ് കയറിന്റെ വളണ്ടിയർ ആയി "
-        "റെജിസ്ട്രർ ചെയ്യാൻ ആയി താഴെ ഉള്ള ലിങ്കിൽ കയറി ഫോം ഫിൽ ചെയ്യൂ"
+        "എടത്താനാട്ടുകര പാലിയേറ്റീവ് കെയറിന്റെ വളണ്ടിയർ ആയി "
+        "റെജിസ്ട്രർ ചെയ്യാൻ ആയി താഴെ ഉള്ള റെജിസ്ട്രർ ബട്ടൺ ക്ലിക്ക് ചെയൂ"
 
     ),
     Padding(
@@ -348,10 +349,10 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
     Text("- How money is raised for palliative care?\n", style: TextStyle(fontWeight: FontWeight.bold),):
     Text("- പാലിയേറ്റീവ് സേവനങ്ങൾക്കുള്ള ധനം എങ്ങനെ കണ്ടെത്തുന്നു?\n", style: TextStyle(fontWeight: FontWeight.bold),),
     (_selectedLanguage == 'English')?
-    textBuild("All services under palliative care are completely free. It costs a lot of money every month. The only"
+    textBuild("All services under palliative care are completely free. It costs a lot of money every month. The only "
         'source of income for palliative care is the amount collected from the natives, the amount collected on'
         ' January 15 through the students and other contributions. Every penny you contribute to this project is '
-        'valuable. If you would like to contribute to the activities of Edathanathukara Palliative Care society, '
+        'valuable. If you would like to contribute to the activities of Edathanattukara Palliative Care society, '
         "please use the Donate button below.",):
     textBuild("പാലിയേറ്റീവ് കെയറിന്റെ കീഴിലുള്ള സേവനങ്ങളെല്ലാം തന്നെ പൂർണമായും "
         "സൗജനയമാണ്. മാസം തോറും വലിയ ഒരു തുക ചിലവു വരുന്നുണ്ട്. നാട്ടുകാരിൽ"

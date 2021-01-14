@@ -591,7 +591,7 @@ class _OfficeScreenState extends State<OfficeScreen> {
 
   }
   _launchURL() async {
-    const url = 'https://www.amanzishan.me';
+    const url = 'https://www.instagram.com/_icodex_/';
     if (await canLaunch(url)) {
       await launch(url);
     } else {

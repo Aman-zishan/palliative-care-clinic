@@ -187,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen>
   CircleAvatar(
   radius: 30,
   backgroundImage: NetworkImage(
-  'https://raw.githubusercontent.com/Aman-zishan/palliative-care-clinic/master/assets/images/test-splash.jpg?token=ANFN55AJ4FNKAJHU47GCAKDAA2XHI'
+  'https://raw.githubusercontent.com/Aman-zishan/palliative-care-clinic/master/assets/images/logo.png?token=ANFN55DYGXAT2SYZCT6IXE3ABBMQK'
   ),
   ),
   SizedBox(
@@ -491,7 +491,7 @@ child: Row(
   }
   //external links to form, developer contact etc.
   _launchURL() async {
-  const url = 'https://www.amanzishan.me';
+  const url = 'https://www.instagram.com/_icodex_/';
   if (await canLaunch(url)) {
   await launch(url);
   } else {
