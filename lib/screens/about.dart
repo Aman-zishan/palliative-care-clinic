@@ -93,7 +93,7 @@ class _AboutScreenState extends State<AboutScreen> {
           Container(
 
             width: size.width,
-            height: size.height * .285,
+            height: size.height * .290,
             decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.fill,
@@ -107,7 +107,7 @@ class _AboutScreenState extends State<AboutScreen> {
               child: Column(
                 children: <Widget>[
                   Container(
-                    height: 64,
+                    height: size.height * 0.09,
                     margin: EdgeInsets.only(bottom: 20),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,12 +119,12 @@ class _AboutScreenState extends State<AboutScreen> {
                             fit: BoxFit.cover,
 
 
-                            width: 60.0,
+                            width: size.width * 0.15,
                           ),
 
 
                         SizedBox(
-                          width: 16,
+                          width: size.width * 0.020,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -138,7 +138,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                   fontSize: 20),
                             ),
                             Padding(padding: EdgeInsets.only(left: 40,right: 0)),
-                            SizedBox(height: 15,),
+                            SizedBox(height: size.height * 0.01,),
                             DropdownButton(
                               hint: Text(_selectedLanguage),
                               icon: Icon(Icons.language,color: Colors.black),
@@ -162,30 +162,14 @@ class _AboutScreenState extends State<AboutScreen> {
 
 
                       ],
-                      
+
                     ),
-                    
+
 
                   ),
                   buttonSection,
 
-                  Align(
-                    child:Container(
-                      padding: const EdgeInsets.only(top: 50,),
-                      child:(_selectedLanguage == 'English')? Text(
-                        "PAIN AND PALLIATIVE CARE SOCIETY",
-                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,),
-                      ):
-                      Text(
-                        "പാലിയേറ്റീവ് കയർ സൊസൈറ്റി",
-                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,),
-                      )
 
-
-
-                    ),
-
-                  ),
 
 
               ],
@@ -194,10 +178,27 @@ class _AboutScreenState extends State<AboutScreen> {
 
                   ),
 Container(
-  padding:  const EdgeInsets.only(top: 280,left: 20,right: 20),
-  
+  padding:   EdgeInsets.only(top: size.height * 0.30,left: 20,right: 20),
+
 child: ListView(
   children: [
+    Align(
+      child:Container(
+          padding: EdgeInsets.only(top: size.height * 0.01,bottom: size.height * 0.01),
+          child:(_selectedLanguage == 'English')? Text(
+            "PAIN AND PALLIATIVE CARE SOCIETY",
+            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,),
+          ):
+          Text(
+            "പാലിയേറ്റീവ് കെയർ സൊസൈറ്റി",
+            style: TextStyle(fontWeight: FontWeight.bold,fontSize: size.width * 0.040,),
+          )
+
+
+
+      ),
+
+    ),
 
 (_selectedLanguage == 'English')?
     textBuild("Edathanattukara Palliative Care is a community owned fellowship providing its services in Alanallur, "

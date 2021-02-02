@@ -89,7 +89,7 @@ class _ContactScreenState extends State<ContactScreen> {
           ),
 
           Container(
-            padding:  const EdgeInsets.only(top: 260,left: 20,right: 20),
+            padding:   EdgeInsets.only(top: size.height * 0.30,left: 20,right: 20),
 
             child: ListView(
               //contact list

@@ -115,7 +115,7 @@ class _OfficeScreenState extends State<OfficeScreen> {
             ),
           ),
           Container(
-            padding:  const EdgeInsets.only(top: 190,left: 20,right: 20),
+            padding:   EdgeInsets.only(top: size.height* 0.30,left: 20,right: 20),
 
             child: ListView(
               //contact list
@@ -580,7 +580,7 @@ class _OfficeScreenState extends State<OfficeScreen> {
                   ),
                 ),
 
-                copyright],
+                ],
             ),)
         ],
       ),

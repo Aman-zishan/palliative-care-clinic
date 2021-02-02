@@ -185,23 +185,7 @@ class _CourseScreenState extends State<CourseScreen> {
               ),
             ),
           ),
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 40),
-              child: Align(
-                alignment: FractionalOffset.bottomCenter,
 
-                child:  GestureDetector(
-                  onTap: (){_launchURL();},
-                  child: Text("© Developed by icodex",
-                    style: new TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold,
-                        foreground: Paint()..shader = linearGradient),
-                  ),),
-              ),
-            ),
-          ),
 
         ],
       ),

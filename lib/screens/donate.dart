@@ -60,12 +60,12 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                             fit: BoxFit.cover,
 
 
-                            width: 60.0,
-                          ),
+                           width: size.width * 0.15,
+                         ),
 
 
                         SizedBox(
-                          width: 16,
+                          width: size.width * 0.020,
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -86,19 +86,19 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                 ],
               ),),
           ),
-   Padding(padding: const EdgeInsets.only(top: 230),
+   Padding(padding: EdgeInsets.only(top: size.height * 0.30),
 
      child: Align(
        alignment: Alignment.topCenter,
        child:Text("Account details and payment", style: new TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),),),
-          Padding(padding: const EdgeInsets.only(top: 280,left: 20),
+          Padding(padding: EdgeInsets.only(top: size.height * 0.40,left: 20),
 
             child: Align(
               alignment: Alignment.centerLeft,
-              child:Column(children: [Text("Name : Pain and palliative care society\nAccount number : 40689101109900\nBranch : Alanallur\nIFSC code : KLGB0040689", style: new TextStyle(fontSize: 17,fontWeight: FontWeight.normal),)],),),),
+              child:Column(children: [Text("Name : Pain and Palliative Care Society\nAccount number : 40689101109900\nBranch : Alanallur\nBank : Kerala Gramin Bank \nIFSC code : KLGB0040689", style: new TextStyle(fontSize: 17,fontWeight: FontWeight.normal),)],),),),
 
           Container(
-            padding:  const EdgeInsets.only(top: 380,left: 20,right: 20),
+            padding:   EdgeInsets.only(top: size.height * 0.55,left: 20,right: 20),
 
             child: ListView(
               //contact list
@@ -108,7 +108,7 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                   onTap: (){ urlfunc.launchURL("https://gpay.app.goo.gl/pay-YMzF4A4G8Zc"); },
                   child:  Container(
 
-                    height: 80,
+                    height: size.height * 0.10,
 
                     child: Card(
                       color: Colors.white,
@@ -132,7 +132,7 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                   onTap: (){  },
                   child:  Container(
 
-                    height: 80,
+                    height: size.height * 0.12,
                     child: Card(
                       color: Colors.white,
 
@@ -148,7 +148,7 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Image.asset("assets/images/paytm.png",height: 30,),
+                          Image.asset("assets/images/paytm.png",height: size.height * 0.05,),
                           Padding(
                             padding: const EdgeInsets.only(top:10.0,bottom: 5.0),
                             child: Text("UPI ID : 8304016621@paytm ", style: TextStyle(color: Colors.black),),
@@ -160,7 +160,7 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                   onTap: (){  },
                   child:  Container(
 
-                    height: 82,
+                    height: size.height * 0.12,
                     child: Card(
                       color: Colors.white,
 
@@ -174,7 +174,7 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
 
                         children: <Widget>[
-                          Image.asset("assets/images/phonepe.png",height: 50,),
+                          Image.asset("assets/images/phonepe.png",height: size.height * 0.07,),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 5.0),
                           child: Text("UPI ID : 8304016621@ybl ",style: TextStyle(color: Colors.black),),
@@ -182,25 +182,10 @@ class _DonateTestScreenState extends State<DonateTestScreen> {
                         ],
                       ),),),
                 ),
+
                 ],
             ),),
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 40),
-              child: Align(
-                alignment: FractionalOffset.bottomCenter,
 
-                child:  GestureDetector(
-                  onTap: (){_launchURL();},
-                  child: Text("© Developed by icodex",
-                    style: new TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold,
-                        foreground: Paint()..shader = linearGradient),
-                  ),),
-              ),
-            ),
-          ),
         ],
       ),
     );

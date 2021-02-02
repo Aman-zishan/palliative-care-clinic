@@ -1,5 +1,5 @@
 name: palliative_care
-description: A new Flutter application.
+description: Palliative care application
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -11,7 +11,7 @@ description: A new Flutter application.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 1.0.0
 
 environment:
   sdk: ">=2.2.2 <3.0.0"
@@ -27,6 +27,7 @@ dependencies:
   provider: ^4.3.2+2
   hive: ^1.4.4+1
   path_provider: ^1.6.24
+  auto_size_text: ^2.1.0
 
 
 
