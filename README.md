@@ -2,7 +2,6 @@
 
 
 
-Mobile application for palliative care edathunattukara society.
 
 # About palliative
 
