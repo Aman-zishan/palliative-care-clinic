@@ -1,16 +1,20 @@
-# palliative_care
+<p align="center"><img width="20%" height="20%" src="assets/images/splash.png"></p>
 
-A new Flutter application.
+<h1 align="center">Palliative Care Edathanattukara</h1>
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Mobile application for palliative care edathanattukara society.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Latest release : v1.0.1
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Downloads:
+
+<a href="https://play.google.com/store/apps/details?id=com.icodex.palliative_care"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="15%"></a>
+
+
+## v1.0.1
+
+<p align="center"><img width="25%" height="25%" src="demo/screenshot1.png">         <img width="25%" height="25%" src="demo/screenshot2.png" >   <img width="25%" height="25%" src="demo/screenshot3.png">     <img width="25%" height="25%" src="demo/screenshot4.png" >    </p>
+
+
