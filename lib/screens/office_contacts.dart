@@ -303,7 +303,7 @@ class _OfficeScreenState extends State<OfficeScreen> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: (){launch("tel://9495397848");   },
+                  onTap: (){launch("tel://9447408177");   },
                   child:  Container(
 
                     height: 75,
@@ -339,7 +339,7 @@ class _OfficeScreenState extends State<OfficeScreen> {
                                     'Joint Secretary 1',
                                     style: cardTextStyle,
                                   ),
-                                  Text("Ph:  +91 9495397848", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
+                                  Text("Ph:  +91 9447408177", style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey, fontSize: 14),), ],
                               ),),),
 
 

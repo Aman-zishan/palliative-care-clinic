@@ -155,7 +155,7 @@ class _CourseScreenState extends State<CourseScreen> {
                         (_selectedLanguage == 'English')?
                         textBuild("A four month Palliative Nursing Course is being conducted under the Edathanattukara Palliative Care Society.  In addition, there is a two-year nursing course for 10th graders, +2 for people between the ages of 18 and 40 (male and female)."
                             ,):
-                        textBuild("എടത്തനാട്ടുകര പാലിയേറ്റീവ്‌ കെയർ സൊസൈറ്റിക്ക്‌ കീഴിൽ 4 മാസ പാലിയേറ്റീവ്‌ നെഴ്സിംഗ്‌ കോഴ്‌സ്‌ നടന്ന്  "
+                        textBuild("എടത്തനാട്ടുകര പാലിയേറ്റീവ്‌ കെയർ സൊസൈറ്റിക്ക്‌ കീഴിൽ 4 മാസ പാലിയേറ്റീവ്‌ നഴ്സിംഗ്‌ കോഴ്‌സ്‌ നടന്ന്  "
                             "വരുന്നു. കൂടാതെ പത്താം ക്ലാസ്‌ , +2 കഴിഞ്ഞ 18 നും 40 വയസ്സിനും ഇടയിലുള്ള  ആളുകൾക്ക്‌ ( ആൺ ,പെൺ ) "
                             " രണ്ട്‌ വർഷ നെഴ്സിംഗ്‌ കോഴ്സും നടന്ന് വരുന്നു."
   ),],)

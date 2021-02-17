@@ -209,26 +209,22 @@ child: ListView(
       "old age homes sprout like mushrooms, and pity and goodness only color the camera flashes, the work of "
       "palliative care is done sincerely and transparently in the firm belief that palliative care is not the"
       " generosity of any servant and that it is the right of every bedridden patient."):
-textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എടത്തനാട്ടുകരയിൽ 2008 മുതൽ പ്രവർത്തിച്ചു"
-" വരുന്ന പാലിയേറ്റീവ് കെയർ സൊസൈറ്റി. ഒരു സാമൂഹ്യ ഉടമസ്ഥതയിലുള്ള "
-"സ്ഥാപനമാണ് അതിന്റെ സേവനങ്ങൾ അലനല്ലൂർ, കോട്ടോപ്പാടം, തച്ചനാട്ടുകര, "
-"താഴേക്കോട് പഞ്ചായത്തുകളിൽ ലഭിച്ചുകൊണ്ടിരിക്കുന്നു. കിടപ്പിലായ "
-"രോഗികളെ അവരുടെ മാനസികവും ശാരീരികവും സാമ്പത്തികവും "
-"സാമൂഹികവുമായ സംഘർഷങ്ങളിൽ നിന്ന് കൈ പിടിച്ചുയർത്തി അന്തസ്സുറ്റ "
+textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എടത്തനാട്ടുകരയിൽ 2008 മുതൽ പ്രവർത്തിച്ചു വരുന്ന സാമൂഹ്യ ഉടമസ്ഥതയിലുള്ള ഒരു സ്ഥാപനമാണ് പാലിയേറ്റീവ് കെയർ ക്ലിനിക്ക്"
+" അതിന്റെ സേവനങ്ങൾ അലനല്ലൂർ പഞ്ചായത്ത് മുഴുവനായും തച്ചനാട്ടുകര, കോട്ടോപ്പാടം, താഴെക്കോട് പഞ്ചായത്തുകളിൽ ഭാഗികമായും ലഭിച്ചുകൊണ്ടിരിക്കുന്നു. കിടപ്പിലായ രോഗികളെ അവരുടെ മാനസികവും ശാരീരികവും സാമ്പത്തികവും സാമൂഹികവും ആത്മീയവുമായ സംഘർഷങ്ങളിൽ നിന്ന് കൈ പിടിച്ചുയർത്തി അന്തസ്സുറ്റ "
 "പരിചരണം വീടുകളിൽ തന്നെ ലഭ്യമാക്കുകയാണ് ഈ സംരംഭം കൊണ്ട്  "
 "ഉദ്ദേശിക്കുന്നത്. നാമുൾപ്പെടുന്ന സമൂഹത്തിലെ നമ്മുടെ സഹോദരീസഹോദരന്മാർ "
 "തന്നെയായ ഈ സംരംഭത്തിന്റെ ഉപഭോക്താക്കളെ പരിചരിക്കുന്നത് ഒരു "
 "സാമൂഹിക ഉത്തരവാദിത്വമായാണ് കാണേണ്ടത്. രോഗികൾ "
 "അവഗണിക്കകപ്പടുകയും കൂണുകൾ പോലെ വൃദ്ധസദനങ്ങൾ "
-" മുളച്ചുപൊന്തുകയും കാരുണ്യവും നന്മയും ക്യാമെറാഫ്‌ളാഷുകളെ "
-"മാത്രം നിറം പിടിപ്പിക്കുകയും ചെയുമ്പോൾ പാലിയേറ്റീവ് കെയറിന്റെ"
-" പ്രവർത്തനങ്ങൾ ആത്മാർത്ഥവും സുതാരയവുമായി നടന്നു കൊണ്ടിരിക്കുന്നത് "
-"പാലിയേറ്റീവ് കെയർ ഒരു സേവകന്റ്റെയും ഔദാര്യമല്ലെന്നും അത് "
+" മുളച്ചുപൊന്തുകയും കാരുണ്യവും നന്മയും ക്യാമറാഫ്ലാഷുകളെ "
+"മാത്രം നിറം പിടിപ്പിക്കുകയും ചെയ്യുമ്പോൾ പാലിയേറ്റീവ് കെയറിന്റെ"
+" പ്രവർത്തനങ്ങൾ ആത്മാർത്ഥവും സുതാര്യവുമായി നടന്നു കൊണ്ടിരിക്കുന്നത് "
+"പാലിയേറ്റീവ് കെയർ ഒരു സേവകന്റെയും ഔദാര്യമല്ലെന്നും അത് "
 "കിടപ്പിലാവുന്ന ഓരോ രോഗികളുടെയും അവകാശമാണെന്നുമുള്ള ഉറച്ച "
 "വിശ്വാസത്തിന്മേലാണ്.",),
     (_selectedLanguage == 'English')?
     Text("Activities of Edathanattukara Palliative Care society\n", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),):
-    Text("എടത്തനാട്ടുകര പാലിയേറ്റീവ് കെയർ ക്ലിനിക്കിന്കെ പ്രവർത്തനങ്ങൾ\n", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),
+    Text("എടത്തനാട്ടുകര പാലിയേറ്റീവ് കെയർ ക്ലിനിക്കിന്റെ പ്രവർത്തനങ്ങൾ\n", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),
     (_selectedLanguage == 'English')?
     Text("- Home care\n", style: TextStyle(fontWeight: FontWeight.bold,),):
     Text("- ഹോം കെയർ\n", style: TextStyle(fontWeight: FontWeight.bold,),),
@@ -239,8 +235,8 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
         "home care, which consists of only volunteers about thirty times."
       ,):
     textBuild("കിടപ്പിലായ രോഗികളെ വീടുകളിൽ ചെന്ന് സാന്ത്വന പരിചരണം "
-        "ഉറപ്പുവരുത്തുവാൻ   രണ്ടു വാഹ്നങ്ങളിലായി മാസത്തിൽ നാല് തവണ ഡോക്ടറുടെ"
-        " നേതൃത്വത്തിലുള്ള ഡോക്ടർസ് ഹോം കെയറും മാസത്തിൽ മുപ്പത്തിരണ്ട് തവണ"
+        "ഉറപ്പുവരുത്തുവാൻ രണ്ടു വാഹനങ്ങളിലായി മാസത്തിൽ നാലു തവണ ഡോക്ടറുടെ"
+        " നേതൃത്വത്തിലുള്ള ഡോക്ടേഴ്‌സ് ഹോം കെയറും മാസത്തിൽ മുപ്പത്തിരണ്ട് തവണ "
         "നഴ്സിന്റെ നേതൃത്വത്തിലുള്ള നഴ്സ് ഹോം കെയറും കൂടാതെ ഏകദേശം മുപ്പത്"
         " തവണ വളണ്ടിയർമാർ മാത്രം ഉൾക്കൊള്ളുന്ന വളണ്ടിയർ ഹോം കെയറും നടത്തിവരുന്നു."),
     (_selectedLanguage == 'English')?
@@ -250,10 +246,10 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
     textBuild("Four times a month, the society's day care system allows patients trapped in a room including those with"
         "spinal cord injuries, to communicate with the outside world and thereby reduce their stress. Organizes "
         "job training and other events for the consumer's of the day care system.",):
-    textBuild("നട്ടെല്ലിന് ക്ഷതമേറ്റവർ ഉൾപ്പെടെ ഒരു മുറിയിൽ തളക്കകപ്പട്ട രോഗികളെ "
+    textBuild("നട്ടെല്ലിന് ക്ഷതമേറ്റവർ ഉൾപ്പെടെ ഒരു മുറിയിൽ തളക്കപ്പെട്ട രോഗികളെ "
         "മാസത്തിൽ നാല് തവണ ക്ലിനിക്കിൽ ഡേ കെയർ സംവിധാനത്തിലൂടെ പുറം"
-        " ലോകവുമായി ബന്ധപ്പെടാനും അതുവഴി അവരുകട മാനസിക സംഘർഷം"
-        "കുറക്കാനും സഹായിക്കുന്നു. ഡേ കെയർ സംവിധാനത്തിലെ ഉഭയഭോക്താക്കൾക്ക്"
+        " ലോകവുമായി ബന്ധപ്പെടാനും അതുവഴി അവരുടെ മാനസിക സംഘർഷം "
+        "കുറക്കാനും സഹായിക്കുന്നു. ഡേ കെയർ സംവിധാനത്തിലെ ഉപഭോക്താക്കൾക്ക്"
         " തൊഴിൽ പരിശീലനവും മറ്റു പരിപാടികളും സംഘടിപ്പിക്കുന്നു."),
     (_selectedLanguage == 'English')?
     Text("- Physiotherapy OP\n", style: TextStyle(fontWeight: FontWeight.bold),):
@@ -275,13 +271,13 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
     (_selectedLanguage == 'English')?
     textBuild("Provides educational assistance to palliative care families who are struggling with educational needs.",):
     textBuild("വിദ്യാഭ്യാസ ആവിശ്യങ്ങൾക്ക് ബുദ്ധിമുട്ട്  നേരിടുന്ന പാലിയേറ്റീവ്"
-        "കുടുംബങ്ങൾക്ക് വിദ്യാഭ്യാസ സഹായം നൽകുന്നു."),
+        " കുടുംബങ്ങൾക്ക് വിദ്യാഭ്യാസ സഹായം നൽകുന്നു."),
     (_selectedLanguage == 'English')?
     Text("- Food assistance\n", style: TextStyle(fontWeight: FontWeight.bold),):
     Text("- ഭക്ഷ്യ സഹായം\n", style: TextStyle(fontWeight: FontWeight.bold),),
     (_selectedLanguage == 'English')?
     textBuild("Food assistance is being provided to needy families under the clinic.",):
-    textBuild("ക്ലിനിക്കിനു കീഴിലെ നിർധനരായ കുടുംബങ്ങൾക്ക് ഭക്ഷ്യസഹായം "
+    textBuild("ക്ലിനിക്കിന് കീഴിലെ നിർധനരായ കുടുംബങ്ങൾക്ക് ഭക്ഷ്യസഹായം "
         "നൽകിവരുന്നു."),
     (_selectedLanguage == 'English')?
     Text("- Ambulance\n", style: TextStyle(fontWeight: FontWeight.bold),):
@@ -315,7 +311,7 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
     (_selectedLanguage == 'English')?
     textBuild("Edathanattukara Palliative society has a women's wing consisting of women volunteers.",):
     textBuild("എടത്തനാട്ടുകര പാലിയേറ്റീവ് ക്ലിനിക്കിന്റെ കീഴിൽ വനിതാ വളണ്ടിയർമാർ"
-        " ഉൾകക്കാള്ളുന്ന ഒരു വനിതാ വിഭാഗം പ്രവർത്തിക്കുന്നുണ്ട്."),
+        " ഉൾക്കൊള്ളുന്ന ഒരു വനിതാ വിഭാഗം പ്രവർത്തിക്കുന്നുണ്ട്."),
     (_selectedLanguage == 'English')?
     Text("- Anyone can be a palliative volunteer\n", style: TextStyle(fontWeight: FontWeight.bold),):
     Text("- ആർക്കെല്ലാം ഒരു പാലിയേറ്റീവ് വളണ്ടിയർ ആവാം\n", style: TextStyle(fontWeight: FontWeight.bold),),
@@ -330,7 +326,7 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
         " നിലയിൽ പാലിയേറ്റീവ് കെയറിന്റ വളണ്ടിയർ ആവുക എന്നത് ജാതി, മത,"
         "രാഷ്ട്രീയ, വിദ്യാഭ്യാസ, പ്രായ, ലിംഗ വ്യത്യാസങ്ങൾക്കെല്ലാം അതീതമാണ്.\n\n"
         "എടത്താനാട്ടുകര പാലിയേറ്റീവ് കെയറിന്റെ വളണ്ടിയർ ആയി "
-        "റെജിസ്ട്രർ ചെയ്യാൻ ആയി താഴെ ഉള്ള റെജിസ്ട്രർ ബട്ടൺ ക്ലിക്ക് ചെയൂ"
+        "റെജിസ്ട്രർ ചെയ്യാൻ ആയി താഴെ ഉള്ള രജിസ്റ്റർ ബട്ടൺ ക്ലിക്ക് ചെയ്യൂ"
 
     ),
     Padding(
@@ -356,10 +352,10 @@ textBuild("സാന്ത്വന പരിചരണ രംഗത്ത് എ
         'valuable. If you would like to contribute to the activities of Edathanattukara Palliative Care society, '
         "please use the Donate button below.",):
     textBuild("പാലിയേറ്റീവ് കെയറിന്റെ കീഴിലുള്ള സേവനങ്ങളെല്ലാം തന്നെ പൂർണമായും "
-        "സൗജനയമാണ്. മാസം തോറും വലിയ ഒരു തുക ചിലവു വരുന്നുണ്ട്. നാട്ടുകാരിൽ"
+        "സൗജന്യമാണ്. മാസം തോറും വലിയ ഒരു തുക ചിലവു വരുന്നുണ്ട്. നാട്ടുകാരിൽ"
         " നിന്ന് പിരിച്ചെടുക്കുന്ന തുകയും, വിദ്യാർത്ഥികളിലൂടെ ജനുവരി 15ന് "
         "പിരിച്ചെടുക്കുന്ന തുകയും മറ്റു സംഭാവനകളുമാണ് പാലിയേറ്റീവ് കെയറിന്റെ"
-        " ഏകവരുമാനം. ഈസംരഭത്തിലേക്ക് നിങ്ങൾ നൽകുന്ന ഓരോ രൂപയും"
+        " ഏകവരുമാനം. ഈസംരഭത്തിലേക്ക് നിങ്ങൾ നൽകുന്ന ഓരോ രൂപയും "
         "വിലപ്പെട്ടതാണ്. താങ്കൾക്ക് എടത്തനാട്ടുകര പാലിയേറ്റീവ് കെയർ ക്ലിനിക്കിന്റെ"
         " പ്രവർത്തനങ്ങൾക്ക് സംഭാവന ചെയ്യാൻ താൽപര്യമുണ്ടെങ്കിൽ താഴെയുള്ള Donate "
         "ബട്ടൺ ഉപയോഗിക്കുക."),

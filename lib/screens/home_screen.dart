@@ -8,6 +8,7 @@ import 'package:palliative_care/models_provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:palliative_care/components/animator.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'about.dart';
 import 'office_contacts.dart';
 import 'donate.dart';
@@ -76,572 +77,577 @@ class _HomeScreenState extends State<HomeScreen>
 
   return Scaffold(
   key: _scaffoldKey,
-  body: Stack(
-  children: <Widget>[
-  Container(
+  body: DoubleBackToCloseApp(
+    child: Stack(
+    children: <Widget>[
+    Container(
 
-  width: size.width,
-  height: size.height * .3,
-  decoration: BoxDecoration(
-  image: DecorationImage(
-  fit: BoxFit.fill,
-  alignment: Alignment.topCenter,
-  image: AssetImage('assets/images/top_header.png')),
-  ),
-  ),
-  SafeArea(
-  child: Padding(
-  padding: EdgeInsets.only( top: size.height * .05, left: size.height * .05,right: size.height * .05, bottom: size.height * .005),
-  child: Column(
-  children: <Widget>[
-  Container(
-  height: size.height * 0.10,
+    width: size.width,
+    height: size.height * .3,
+    decoration: BoxDecoration(
+    image: DecorationImage(
+    fit: BoxFit.fill,
+    alignment: Alignment.topCenter,
+    image: AssetImage('assets/images/top_header.png')),
+    ),
+    ),
+    SafeArea(
+    child: Padding(
+    padding: EdgeInsets.only( top: size.height * .05, left: size.height * .05,right: size.height * .05, bottom: size.height * .005),
+    child: Column(
+    children: <Widget>[
+    Container(
+    height: size.height * 0.10,
 
-  child: Row(
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: <Widget>[
-  CircleAvatar(
-  radius: 30,
-  backgroundImage: NetworkImage(
-  'https://raw.githubusercontent.com/Aman-zishan/palliative-care-clinic/master/assets/images/logo.png'
-  ),
-  ),
-  SizedBox(
-  width: size.width * 0.015,
-  ),
-  Column(
-  mainAxisAlignment: MainAxisAlignment.center,
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: <Widget>[
-  AutoSizeText(
-  'Palliative Care Society',
-  style: TextStyle(
-  fontFamily: "Montserrat Medium",
-  color: Colors.white,
-  fontSize: 20),
-  ),
-  Text(
-  'Edathanattukara ',
-  style: TextStyle(
-  fontSize: 14,
-  color: Colors.white,
-  fontFamily: "Montserrat Regular"),
-  )
-  ],
-  )
-  ],
-  ),
-  ),
-
-  Container(
-    height: size.height * 0.70,
-    padding: EdgeInsets.only(top: size.height * 0.01,
-      left: size.width * 0.005,
-      right: size.width * 0.005,
+    child: Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
+    CircleAvatar(
+    radius: 30,
+    backgroundImage: NetworkImage(
+    'https://raw.githubusercontent.com/Aman-zishan/palliative-care-clinic/master/assets/images/logo.png'
+    ),
+    ),
+    SizedBox(
+    width: size.width * 0.015,
+    ),
+    Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+    AutoSizeText(
+    'Palliative Care Society',
+    style: TextStyle(
+    fontFamily: "Montserrat Medium",
+    color: Colors.white,
+    fontSize: 20),
+    ),
+    Text(
+    'Edathanattukara ',
+    style: TextStyle(
+    fontSize: 14,
+    color: Colors.white,
+    fontFamily: "Montserrat Regular"),
+    )
+    ],
+    )
+    ],
+    ),
     ),
 
-    child: Center(
+    Container(
+      height: size.height * 0.70,
+      padding: EdgeInsets.only(top: size.height * 0.01,
+        left: size.width * 0.005,
+        right: size.width * 0.005,
+      ),
 
-      child: GridView.count(
+      child: Center(
 
-        mainAxisSpacing: 10,
+        child: GridView.count(
 
-        crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
 
-        primary: false,
+          crossAxisSpacing: 10,
 
-        crossAxisCount: 2,
+          primary: false,
 
-        shrinkWrap: true,
+          crossAxisCount: 2,
 
-        children: <Widget>[
+          shrinkWrap: true,
 
-          GestureDetector(
+          children: <Widget>[
+
+            GestureDetector(
 
 
-            onTap: () {
+              onTap: () {
+                Navigator.push(
+
+                    context,
+
+                    MaterialPageRoute(builder: (context) => AboutScreen())
+
+                );
+              },
+
+              child: Card(
+
+                shape: RoundedRectangleBorder(
+
+                    borderRadius: BorderRadius.circular(8)
+
+                ),
+
+                elevation: 4,
+
+                child: Column(
+
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: <Widget>[
+
+
+                    SvgPicture.network(
+
+                      'https://www.flaticon.com/svg/static/icons/svg/3555/3555625.svg',
+
+                      placeholderBuilder: (context) =>
+                          CircularProgressIndicator(),
+
+                      height: size.height * 0.10,
+
+                    ),
+
+                    SizedBox(height: 8),
+
+                    Text(
+
+                      'About Palliative',
+
+                      style: cardTextStyle,
+
+                    ),
+
+                    SizedBox(height: 2,),
+
+                    Text(
+
+                        "About Us",
+
+                        style: TextStyle(
+
+                            color: Colors.grey,
+
+                            fontSize: 10
+
+                        )
+
+                    ),
+
+                  ],
+
+                ),
+
+              ),
+
+            ),
+
+            GestureDetector(
+
+              onTap: () {
+                Navigator.push(
+
+                    context,
+
+                    MaterialPageRoute(builder: (context) => DonateTestScreen())
+
+                );
+              },
+
+              child: Card(
+
+                shape: RoundedRectangleBorder(
+
+                    borderRadius: BorderRadius.circular(8)
+
+                ),
+
+                elevation: 4,
+
+                child: Column(
+
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: <Widget>[
+
+                    SvgPicture.network(
+
+                      'https://www.flaticon.com/svg/static/icons/svg/3555/3555601.svg',
+
+                      placeholderBuilder: (context) =>
+                          CircularProgressIndicator(),
+
+                      height: size.height * 0.10,
+
+                    ),
+
+                    SizedBox(height: 8,),
+
+                    Text(
+
+                      'Donate',
+
+                      style: cardTextStyle,
+
+                    ),
+
+                    SizedBox(height: 2,),
+
+                    Text(
+
+                        "Create a better future",
+
+                        style: TextStyle(
+
+                            color: Colors.grey,
+
+                            fontSize: 10
+
+                        )
+
+                    ),
+
+                  ],
+
+                ),
+
+              ),
+
+            ),
+
+            GestureDetector(
+
+              onTap: () {
+                Navigator.push(
+
+                    context,
+
+                    MaterialPageRoute(builder: (context) => OfficeScreen())
+
+                );
+              },
+
+
+              child: Card(
+
+                shape: RoundedRectangleBorder(
+
+                    borderRadius: BorderRadius.circular(8)
+
+                ),
+
+                elevation: 4,
+
+                child: Column(
+
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: <Widget>[
+
+                    SvgPicture.network(
+
+                      'https://www.flaticon.com/svg/static/icons/svg/3555/3555418.svg',
+
+                      placeholderBuilder: (context) =>
+                          CircularProgressIndicator(),
+
+                      height: size.height * 0.10,
+
+                    ),
+
+                    SizedBox(height: 8,),
+
+                    Text(
+
+                      'Office Contacts',
+
+                      style: cardTextStyle,
+
+                    ),
+
+                    SizedBox(height: 2,),
+
+                    Text(
+
+                        "Contact details",
+
+                        style: TextStyle(
+
+                            color: Colors.grey,
+
+                            fontSize: 10
+
+                        )
+
+                    ),
+
+                  ],
+
+                ),
+
+              ),
+
+            ),
+
+            GestureDetector(onTap: () {
               Navigator.push(
 
                   context,
 
-                  MaterialPageRoute(builder: (context) => AboutScreen())
+                  MaterialPageRoute(builder: (context) => VolunteerScreen())
 
               );
             },
 
-            child: Card(
+              child: Card(
 
-              shape: RoundedRectangleBorder(
+                shape: RoundedRectangleBorder(
 
-                  borderRadius: BorderRadius.circular(8)
+                    borderRadius: BorderRadius.circular(8)
 
-              ),
+                ),
 
-              elevation: 4,
+                elevation: 4,
 
-              child: Column(
+                child: Column(
 
-                mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
 
-                children: <Widget>[
+                  children: <Widget>[
+
+                    SvgPicture.network(
+
+                      'https://www.flaticon.com/svg/static/icons/svg/3555/3555570.svg',
+
+                      placeholderBuilder: (context) =>
+                          CircularProgressIndicator(),
+
+                      height: size.height * 0.10,
+
+                    ),
+
+                    SizedBox(height: 8,),
+
+                    Text(
+
+                      'Volunteering',
+
+                      style: cardTextStyle,
 
 
-                  SvgPicture.network(
+                    ),
 
-                    'https://www.flaticon.com/svg/static/icons/svg/3555/3555625.svg',
+                    SizedBox(height: 2,),
 
-                    placeholderBuilder: (context) =>
-                        CircularProgressIndicator(),
+                    Text(
 
-                    height: size.height * 0.10,
+                        "Register as a volunteer",
 
-                  ),
+                        style: TextStyle(
 
-                  SizedBox(height: 8),
+                            color: Colors.grey,
 
-                  Text(
+                            fontSize: 10
 
-                    'About Palliative',
+                        )
 
-                    style: cardTextStyle,
+                    ),
 
-                  ),
 
-                  SizedBox(height: 2,),
+                  ],
 
-                  Text(
-
-                      "About Us",
-
-                      style: TextStyle(
-
-                          color: Colors.grey,
-
-                          fontSize: 10
-
-                      )
-
-                  ),
-
-                ],
+                ),
 
               ),
 
             ),
 
-          ),
 
-          GestureDetector(
+            GestureDetector(
 
-            onTap: () {
+              onTap: () {
+                Navigator.push(
+
+                    context,
+
+                    MaterialPageRoute(builder: (context) => CourseScreen())
+
+                );
+              },
+
+              child: Card(
+
+                shape: RoundedRectangleBorder(
+
+                    borderRadius: BorderRadius.circular(8)
+
+                ),
+
+                elevation: 4,
+
+                child: Column(
+
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: <Widget>[
+
+                    SvgPicture.network(
+
+                      'https://www.flaticon.com/svg/static/icons/svg/3555/3555226.svg',
+
+                      placeholderBuilder: (context) =>
+                          CircularProgressIndicator(),
+
+                      height: size.height * 0.10,
+
+                    ),
+
+                    SizedBox(height: 8),
+
+                    Text(
+
+                      'Training Course',
+
+                      style: cardTextStyle,
+
+                    ),
+
+                    SizedBox(height: 2,),
+
+                    Text(
+
+                        "courses",
+
+                        style: TextStyle(
+
+                            color: Colors.grey,
+
+                            fontSize: 10
+
+                        )
+
+                    ),
+
+                  ],
+
+                ),
+
+              ),
+
+            ),
+
+            GestureDetector(onTap: () {
               Navigator.push(
 
                   context,
 
-                  MaterialPageRoute(builder: (context) => DonateTestScreen())
+                  MaterialPageRoute(builder: (context) => ContactScreen())
 
               );
             },
 
-            child: Card(
+              child: Card(
 
-              shape: RoundedRectangleBorder(
+                shape: RoundedRectangleBorder(
 
-                  borderRadius: BorderRadius.circular(8)
+                    borderRadius: BorderRadius.circular(8)
 
-              ),
+                ),
 
-              elevation: 4,
+                elevation: 4,
 
-              child: Column(
+                child: Column(
 
-                mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
 
-                children: <Widget>[
+                  children: <Widget>[
 
-                  SvgPicture.network(
+                    SvgPicture.network(
 
-                    'https://www.flaticon.com/svg/static/icons/svg/3555/3555601.svg',
+                      'https://www.flaticon.com/svg/static/icons/svg/3555/3555500.svg',
 
-                    placeholderBuilder: (context) =>
-                        CircularProgressIndicator(),
+                      placeholderBuilder: (context) =>
+                          CircularProgressIndicator(),
 
-                    height: size.height * 0.10,
+                      height: size.height * 0.10,
 
-                  ),
+                    ),
 
-                  SizedBox(height: 8,),
+                    SizedBox(height: 8,),
 
-                  Text(
+                    Text(
 
-                    'Donate',
+                      'Contact Us',
 
-                    style: cardTextStyle,
+                      style: cardTextStyle,
 
-                  ),
+                    ),
 
-                  SizedBox(height: 2,),
+                    SizedBox(height: 2,),
 
-                  Text(
+                    Text(
 
-                      "Create a better future",
+                        "Contact details",
 
-                      style: TextStyle(
+                        style: TextStyle(
 
-                          color: Colors.grey,
+                            color: Colors.grey,
 
-                          fontSize: 10
+                            fontSize: 10
 
-                      )
+                        )
 
-                  ),
+                    ),
 
-                ],
+                  ],
 
-              ),
-
-            ),
-
-          ),
-
-          GestureDetector(
-
-            onTap: () {
-              Navigator.push(
-
-                  context,
-
-                  MaterialPageRoute(builder: (context) => OfficeScreen())
-
-              );
-            },
-
-
-            child: Card(
-
-              shape: RoundedRectangleBorder(
-
-                  borderRadius: BorderRadius.circular(8)
-
-              ),
-
-              elevation: 4,
-
-              child: Column(
-
-                mainAxisAlignment: MainAxisAlignment.center,
-
-                children: <Widget>[
-
-                  SvgPicture.network(
-
-                    'https://www.flaticon.com/svg/static/icons/svg/3555/3555418.svg',
-
-                    placeholderBuilder: (context) =>
-                        CircularProgressIndicator(),
-
-                    height: size.height * 0.10,
-
-                  ),
-
-                  SizedBox(height: 8,),
-
-                  Text(
-
-                    'Office Contacts',
-
-                    style: cardTextStyle,
-
-                  ),
-
-                  SizedBox(height: 2,),
-
-                  Text(
-
-                      "Contact details",
-
-                      style: TextStyle(
-
-                          color: Colors.grey,
-
-                          fontSize: 10
-
-                      )
-
-                  ),
-
-                ],
+                ),
 
               ),
 
             ),
 
-          ),
 
-          GestureDetector(onTap: () {
-            Navigator.push(
+          ],
 
-                context,
 
-                MaterialPageRoute(builder: (context) => VolunteerScreen())
-
-            );
-          },
-
-            child: Card(
-
-              shape: RoundedRectangleBorder(
-
-                  borderRadius: BorderRadius.circular(8)
-
-              ),
-
-              elevation: 4,
-
-              child: Column(
-
-                mainAxisAlignment: MainAxisAlignment.center,
-
-                children: <Widget>[
-
-                  SvgPicture.network(
-
-                    'https://www.flaticon.com/svg/static/icons/svg/3555/3555570.svg',
-
-                    placeholderBuilder: (context) =>
-                        CircularProgressIndicator(),
-
-                    height: size.height * 0.10,
-
-                  ),
-
-                  SizedBox(height: 8,),
-
-                  Text(
-
-                    'Volunteering',
-
-                    style: cardTextStyle,
-
-
-                  ),
-
-                  SizedBox(height: 2,),
-
-                  Text(
-
-                      "Register as a volunteer",
-
-                      style: TextStyle(
-
-                          color: Colors.grey,
-
-                          fontSize: 10
-
-                      )
-
-                  ),
-
-
-                ],
-
-              ),
-
-            ),
-
-          ),
-
-
-          GestureDetector(
-
-            onTap: () {
-              Navigator.push(
-
-                  context,
-
-                  MaterialPageRoute(builder: (context) => CourseScreen())
-
-              );
-            },
-
-            child: Card(
-
-              shape: RoundedRectangleBorder(
-
-                  borderRadius: BorderRadius.circular(8)
-
-              ),
-
-              elevation: 4,
-
-              child: Column(
-
-                mainAxisAlignment: MainAxisAlignment.center,
-
-                children: <Widget>[
-
-                  SvgPicture.network(
-
-                    'https://www.flaticon.com/svg/static/icons/svg/3555/3555226.svg',
-
-                    placeholderBuilder: (context) =>
-                        CircularProgressIndicator(),
-
-                    height: size.height * 0.10,
-
-                  ),
-
-                  SizedBox(height: 8),
-
-                  Text(
-
-                    'Training Course',
-
-                    style: cardTextStyle,
-
-                  ),
-
-                  SizedBox(height: 2,),
-
-                  Text(
-
-                      "courses",
-
-                      style: TextStyle(
-
-                          color: Colors.grey,
-
-                          fontSize: 10
-
-                      )
-
-                  ),
-
-                ],
-
-              ),
-
-            ),
-
-          ),
-
-          GestureDetector(onTap: () {
-            Navigator.push(
-
-                context,
-
-                MaterialPageRoute(builder: (context) => ContactScreen())
-
-            );
-          },
-
-            child: Card(
-
-              shape: RoundedRectangleBorder(
-
-                  borderRadius: BorderRadius.circular(8)
-
-              ),
-
-              elevation: 4,
-
-              child: Column(
-
-                mainAxisAlignment: MainAxisAlignment.center,
-
-                children: <Widget>[
-
-                  SvgPicture.network(
-
-                    'https://www.flaticon.com/svg/static/icons/svg/3555/3555500.svg',
-
-                    placeholderBuilder: (context) =>
-                        CircularProgressIndicator(),
-
-                    height: size.height * 0.10,
-
-                  ),
-
-                  SizedBox(height: 8,),
-
-                  Text(
-
-                    'Contact Us',
-
-                    style: cardTextStyle,
-
-                  ),
-
-                  SizedBox(height: 2,),
-
-                  Text(
-
-                      "Contact details",
-
-                      style: TextStyle(
-
-                          color: Colors.grey,
-
-                          fontSize: 10
-
-                      )
-
-                  ),
-
-                ],
-
-              ),
-
-            ),
-
-          ),
-
-
-        ],
+        ),
 
 
       ),
-
-
     ),
-  ),
 
-  ],
-  ),
-  ),
-  ),
+    ],
+    ),
+    ),
+    ),
 
 Container(
 
-  child: Padding(
-  padding:  EdgeInsets.only(bottom: size.height * 0.045),
-  child: Align(
-  alignment: FractionalOffset.bottomRight,
+    child: Padding(
+    padding:  EdgeInsets.only(bottom: size.height * 0.045),
+    child: Align(
+    alignment: FractionalOffset.bottomRight,
 child: Row(
-  mainAxisAlignment: MainAxisAlignment.spaceAround,
-  children: [
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
  GestureDetector(
-  onTap: (){_launchURL();},
-  child: Text("© Developed by icodex",
-  style: new TextStyle(
-  fontSize: 15.0,
-  fontWeight: FontWeight.bold,
-  foreground: Paint()..shader = linearGradient),
-  ),),
+    onTap: (){_launchURL();},
+    child: Text("© Developed by icodex",
+    style: new TextStyle(
+    fontSize: 15.0,
+    fontWeight: FontWeight.bold,
+    foreground: Paint()..shader = linearGradient),
+    ),),
 
-  ZAnimatedToggle(
-    values: ['💡', '🌙'],
-    onToggleCallback: (v) async {
-      await themeProvider.toggleThemeData();
-      setState(() {});
-      changeThemeMode(themeProvider.isLightTheme);
-    },
-  ),],),
-  ),
-  ),
-  ),
+    ZAnimatedToggle(
+      values: ['💡', '🌙'],
+      onToggleCallback: (v) async {
+        await themeProvider.toggleThemeData();
+        setState(() {});
+        changeThemeMode(themeProvider.isLightTheme);
+      },
+    ),],),
+    ),
+    ),
+    ),
 
-  ],
+    ],
+    ),
+    snackBar: const SnackBar(
+      content: Text('Press again to exit',style: TextStyle(fontSize: 17),),
+    ),
   ),
   );
   }
