@@ -1,6 +1,4 @@
-<p align="center"><img width="20%" height="20%" src="assets/images/splash.png"></p>
-
-<h1 align="center">Palliative Care Edathanattukara</h1>
+<p align="center"><img  src="demo/logo.png"></p>
 
 
 
