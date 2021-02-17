@@ -15,6 +15,6 @@ Mobile application for palliative care edathanattukara society.
 
 ## v1.0.1
 
-<p align="center"><img width="25%" height="25%" src="demo/screenshot1.png">         <img width="25%" height="25%" src="demo/screenshot2.png" >   <img width="25%" height="25%" src="demo/screenshot3.png">     <img width="25%" height="25%" src="demo/screenshot4.png" >    </p>
+<p align="center"><img width="22%" height="25%" src="demo/screenshot1.png">         <img width="22%" height="25%" src="demo/screenshot2.png" >   <img width="22%" height="25%" src="demo/screenshot3.png">     <img width="22%" height="25%" src="demo/screenshot4.png" >    </p>
 
 
